@@ -27,6 +27,7 @@ h3,
 h4 {
   font-family: "Roboto Slab", serif;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 header,
@@ -40,7 +41,8 @@ footer {
   margin: 0 auto;
 }
 
-button {
+button,
+.button {
   border: none;
   background-color: #074980;
   color: #eff3f7;
@@ -216,4 +218,77 @@ main .hero [data-id=schedule-button] {
   padding: 2rem 6rem;
   border-radius: 20px;
   font-family: "Roboto Slab", serif;
+}
+main .pet-types {
+  background-color: #eff3f7;
+  padding: 10rem 0;
+}
+main .pet-types .content-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 400px 400px;
+  grid-template-areas: "dogs dogs cats" "birds fish reptiles";
+  gap: 2.5rem;
+  color: #eff3f7;
+}
+main .pet-types .pet-type-card {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  position: relative;
+}
+main .pet-types .pet-type-card .card-info {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main .pet-types .pet-type-card .card-info h2 {
+  font-size: 4rem;
+  margin-bottom: -1rem;
+}
+main .pet-types .pet-type-card .card-info p {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  text-shadow: 1px 1px 2px #222;
+}
+main .pet-types .pet-type-card .card-info .button {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  font-family: "Roboto Slab", serif;
+  border: 2px solid #eff3f7;
+  border-radius: 10px;
+}
+main .pet-types .pet-dogs {
+  background: url("/assets/photos/dogs.jpg");
+  background-size: 160%;
+  background-position: 10% 72.5%;
+  grid-area: dogs;
+}
+main .pet-types .pet-cats {
+  background: url("/assets/photos/cats.jpg");
+  background-size: 160%;
+  background-position: 60% 100%;
+  grid-area: cats;
+}
+main .pet-types .pet-birds {
+  background: url("/assets/photos/birds.jpg");
+  background-size: 125%;
+  background-position: center;
+  grid-area: birds;
+}
+main .pet-types .pet-fish {
+  background: url("/assets/photos/fish.jpg");
+  background-size: cover;
+  background-position: center 20%;
+  grid-area: fish;
+}
+main .pet-types .pet-reptiles {
+  background: url("/assets/photos/reptiles.jpg");
+  background-size: cover;
+  background-position: center;
+  grid-area: reptiles;
 }

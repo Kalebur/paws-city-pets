@@ -24,6 +24,7 @@ h3,
 h4 {
   font-family: $font-serif;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 header,
@@ -37,7 +38,8 @@ footer {
   margin: 0 auto;
 }
 
-button {
+button,
+.button {
   border: none;
   background-color: $color-blue;
   color: $color-white;

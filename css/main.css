@@ -1,0 +1,219 @@
+/* COLORS */
+/* TRANSITIONS */
+/* BOX SHADOWS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body,
+html {
+  background-color: black;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html,
+p,
+span {
+  font-family: "Roboto", "Franklin Gothic Medium", Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+}
+
+header,
+main,
+footer {
+  background-color: orangered;
+}
+
+.content-area {
+  width: 50%;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+  background-color: #074980;
+  color: #eff3f7;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+a:link,
+a:visited {
+  color: #eff3f7;
+  transition: all 0.4s;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header {
+  color: #eff3f7;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+header a:hover,
+header a:active {
+  color: #f7b219;
+}
+header .header-top {
+  background-color: #003964;
+}
+header .header-top .content-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 1.6rem;
+  position: relative;
+}
+header .header-top .content-area:first-child a {
+  margin-left: 1rem;
+}
+header .header-top .content-area p {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Roboto Slab", serif;
+}
+header .header-top .content-area p .vertical-divider {
+  display: inline-block;
+  height: 100%;
+  background-color: #eff3f7;
+  font-weight: 300;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+header .header-bottom {
+  background-color: #074980;
+}
+header .header-bottom .content-area {
+  background-color: #074980;
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
+}
+header .header-bottom .content-area img {
+  flex-shrink: 1;
+  max-width: 15%;
+}
+header .header-bottom .content-area .input-group {
+  width: 50%;
+  position: relative;
+}
+header .header-bottom .content-area .input-group button {
+  background-color: #f88824;
+  color: #eff3f7;
+  padding: 1rem 2rem;
+  position: absolute;
+  font-size: 3.5rem;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header .header-bottom .content-area .input-group input {
+  font-size: 3rem;
+  padding: 1.25rem;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  color: rgb(97, 97, 97);
+}
+header .header-bottom .content-area .input-group input::-moz-placeholder {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+header .header-bottom .content-area .input-group input:-ms-input-placeholder {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+header .header-bottom .content-area .input-group input::placeholder {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main {
+  /* PETS SECTION */
+}
+main .hero {
+  background-color: #f7b219;
+}
+main .hero .content-area {
+  background: url("/assets/photos/puppy-hero-bg.jpg");
+  background-size: 160%;
+  background-position: 70% 65%;
+  background-repeat: no-repeat;
+  height: 100%;
+  padding-bottom: 18rem;
+  color: #003964;
+}
+main .hero nav {
+  width: 100%;
+  color: #eff3f7;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
+  top: 0;
+  font-family: "Roboto Slab", serif;
+}
+main .hero nav ul {
+  display: flex;
+  /* STYLES FOR NAVIGATION MENU ITEMS */
+}
+main .hero nav ul li {
+  flex-grow: 1;
+  flex-basis: 20%;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 3rem 0;
+  font-weight: bold;
+}
+main .hero nav ul .menu-dogs {
+  background-color: #f85c62;
+}
+main .hero nav ul .menu-cats {
+  background-color: #8560a6;
+}
+main .hero nav ul .menu-birds {
+  background-color: #f88824;
+}
+main .hero nav ul .menu-fish {
+  background-color: #3f9ce0;
+}
+main .hero nav ul .menu-reptiles {
+  background-color: #39b173;
+}
+main .hero h1 {
+  font-size: 4.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 50%;
+  margin-top: 10rem;
+}
+main .hero p {
+  margin: 6rem 0;
+  width: 45%;
+  font-size: 2rem;
+}
+main .hero [data-id=schedule-button] {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 2rem 6rem;
+  border-radius: 20px;
+  font-family: "Roboto Slab", serif;
+}

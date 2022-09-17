@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body,
+html {
+  background-color: black;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html,
+p,
+span {
+  font-family: $font-sans;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-serif;
+  font-weight: 600;
+}
+
+header,
+main,
+footer {
+  background-color: orangered;
+}
+
+.content-area {
+  width: 50%;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+  background-color: $color-blue;
+  color: $color-white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+a:link,
+a:visited {
+  color: $color-white;
+  transition: $transition-default;
+  text-transform: uppercase;
+  text-decoration: none;
+}

@@ -1,0 +1,87 @@
+// @import "../abstracts/variables";
+
+main {
+  .hero {
+    background-color: $color-yellow;
+
+    .content-area {
+      background: url("/assets/photos/puppy-hero-bg.jpg");
+      background-size: 160%;
+      background-position: 70% 65%;
+      background-repeat: no-repeat;
+      height: 100%;
+      padding-bottom: 18rem;
+      color: $color-blue-dark;
+    }
+
+    nav {
+      width: 100%;
+      color: $color-white;
+      border-bottom-left-radius: $border-radius-default;
+      border-bottom-right-radius: $border-radius-default;
+      overflow: hidden;
+      box-shadow: $shadow-default;
+      top: 0;
+      font-family: $font-serif;
+
+      ul {
+        display: flex;
+
+        li {
+          flex-grow: 1;
+          flex-basis: 20%;
+          font-size: 2.5rem;
+          text-align: center;
+          padding: 3rem 0;
+          font-weight: bold;
+        }
+
+        /* STYLES FOR NAVIGATION MENU ITEMS */
+
+        .menu-dogs {
+          background-color: $color-red;
+        }
+
+        .menu-cats {
+          background-color: $color-purple;
+        }
+
+        .menu-birds {
+          background-color: $color-orange;
+        }
+
+        .menu-fish {
+          background-color: $color-blue-light;
+        }
+
+        .menu-reptiles {
+          background-color: $color-green;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 4.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      width: 50%;
+      margin-top: 10rem;
+    }
+
+    p {
+      margin: 6rem 0;
+      width: 45%;
+      font-size: 2rem;
+    }
+
+    [data-id="schedule-button"] {
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding: 2rem 6rem;
+      border-radius: $border-radius-default;
+      font-family: "Roboto Slab", serif;
+    }
+  }
+
+  /* PETS SECTION */
+}

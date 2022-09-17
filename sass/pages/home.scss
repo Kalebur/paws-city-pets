@@ -80,6 +80,13 @@ main {
       padding: 2rem 6rem;
       border-radius: $border-radius-default;
       font-family: "Roboto Slab", serif;
+      transition: $transition-default;
+
+      &:hover {
+        transition: $transition-default;
+        transform: translateY(-0.5rem);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+      }
     }
   }
 
@@ -132,6 +139,7 @@ main {
           font-family: $font-serif;
           border: 2px solid $color-white;
           border-radius: $border-radius-small;
+          transition: $transition-default;
         }
       }
     }
@@ -169,6 +177,40 @@ main {
       background-size: cover;
       background-position: center;
       grid-area: reptiles;
+    }
+  }
+
+  /* ABOUT DOGGO SECTION */
+  .about-doggo {
+    background-color: $color-blue;
+    padding-top: 5rem;
+
+    .content-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      margin-right: 5rem;
+      align-self: end;
+    }
+
+    .about-right {
+      padding-left: 5rem;
+
+      h2 {
+        margin-top: 8rem;
+        margin-bottom: 5rem;
+        font-size: 5rem;
+      }
+
+      p {
+        font-size: 2rem;
+        line-height: 4rem;
+      }
     }
   }
 }

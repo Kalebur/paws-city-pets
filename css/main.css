@@ -13,6 +13,7 @@ html {
   background-color: black;
   font-size: 62.5%;
   overflow-x: hidden;
+  color: #eff3f7;
 }
 
 html,
@@ -150,6 +151,7 @@ header .header-bottom .content-area .input-group input::placeholder {
 
 main {
   /* PETS SECTION */
+  /* ABOUT DOGGO SECTION */
 }
 main .hero {
   background-color: #f7b219;
@@ -218,6 +220,12 @@ main .hero [data-id=schedule-button] {
   padding: 2rem 6rem;
   border-radius: 20px;
   font-family: "Roboto Slab", serif;
+  transition: all 0.4s;
+}
+main .hero [data-id=schedule-button]:hover {
+  transition: all 0.4s;
+  transform: translateY(-0.5rem);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
 main .pet-types {
   background-color: #eff3f7;
@@ -261,6 +269,7 @@ main .pet-types .pet-type-card .card-info .button {
   font-family: "Roboto Slab", serif;
   border: 2px solid #eff3f7;
   border-radius: 10px;
+  transition: all 0.4s;
 }
 main .pet-types .pet-dogs {
   background: url("/assets/photos/dogs.jpg");
@@ -291,4 +300,31 @@ main .pet-types .pet-reptiles {
   background-size: cover;
   background-position: center;
   grid-area: reptiles;
+}
+main .about-doggo {
+  background-color: #074980;
+  padding-top: 5rem;
+}
+main .about-doggo .content-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+main .about-doggo img {
+  display: block;
+  width: 100%;
+  margin-right: 5rem;
+  align-self: end;
+}
+main .about-doggo .about-right {
+  padding-left: 5rem;
+}
+main .about-doggo .about-right h2 {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+  font-size: 5rem;
+}
+main .about-doggo .about-right p {
+  font-size: 2rem;
+  line-height: 4rem;
 }

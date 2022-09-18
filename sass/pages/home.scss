@@ -213,4 +213,60 @@ main {
       }
     }
   }
+
+  /* TOP RECOMMENDATIONS */
+  .featured-products {
+    background-color: $color-white;
+    text-align: center;
+    padding: 15rem 0;
+
+    h2 {
+      color: $color-blue;
+      font-size: 4rem;
+    }
+
+    p {
+      color: $color-black;
+      font-size: 2.5rem;
+      margin: 5rem 0;
+    }
+
+    h3 {
+      color: $color-black;
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      .product-card {
+        img {
+          width: 100%;
+        }
+
+        p {
+          margin: 2rem 0;
+        }
+
+        .cart-button {
+          width: 100%;
+          font-size: 2rem;
+          display: block;
+          background-color: $color-orange;
+          padding: 1rem 0;
+          border-radius: $border-radius-small;
+          transition: $transition-default;
+
+          &:hover {
+            background-color: $color-orange-dark;
+            box-shadow: $shadow-default;
+            transform: translateY(-5px);
+          }
+        }
+      }
+    }
+  }
 }

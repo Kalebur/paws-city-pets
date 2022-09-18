@@ -152,6 +152,7 @@ header .header-bottom .content-area .input-group input::placeholder {
 main {
   /* PETS SECTION */
   /* ABOUT DOGGO SECTION */
+  /* TOP RECOMMENDATIONS */
 }
 main .hero {
   background-color: #f7b219;
@@ -327,4 +328,48 @@ main .about-doggo .about-right h2 {
 main .about-doggo .about-right p {
   font-size: 2rem;
   line-height: 4rem;
+}
+main .featured-products {
+  background-color: #eff3f7;
+  text-align: center;
+  padding: 15rem 0;
+}
+main .featured-products h2 {
+  color: #074980;
+  font-size: 4rem;
+}
+main .featured-products p {
+  color: #222;
+  font-size: 2.5rem;
+  margin: 5rem 0;
+}
+main .featured-products h3 {
+  color: #222;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+main .featured-products .products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+main .featured-products .products .product-card img {
+  width: 100%;
+}
+main .featured-products .products .product-card p {
+  margin: 2rem 0;
+}
+main .featured-products .products .product-card .cart-button {
+  width: 100%;
+  font-size: 2rem;
+  display: block;
+  background-color: #f88824;
+  padding: 1rem 0;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+main .featured-products .products .product-card .cart-button:hover {
+  background-color: #d5731c;
+  box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
+  transform: translateY(-5px);
 }

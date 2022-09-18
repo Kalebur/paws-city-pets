@@ -17,6 +17,7 @@ html,
 p,
 span {
   font-family: $font-sans;
+  font-weight: 500;
 }
 
 h1,
@@ -26,6 +27,10 @@ h4 {
   font-family: $font-serif;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: 4rem;
 }
 
 header,
@@ -46,6 +51,36 @@ button,
   color: $color-white;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.showcase-btn {
+  position: absolute;
+  font-size: 10rem;
+  background-color: transparent;
+  color: $color-orange;
+  transition: $transition-default;
+
+  &:hover {
+    color: $color-yellow;
+    text-shadow: $shadow-default;
+  }
+}
+
+.btn-orange {
+  width: 100%;
+  font-size: 2rem;
+  font-family: $font-serif;
+  display: block;
+  background-color: $color-orange;
+  padding: 1rem 0;
+  border-radius: $border-radius-tiny;
+  transition: $transition-default;
+
+  &:hover {
+    background-color: $color-yellow;
+    box-shadow: $shadow-default;
+    transform: translateY(-5px);
+  }
 }
 
 a:link,

@@ -1,0 +1,11 @@
+footer {
+  background-color: $color-blue;
+  font-size: 1.6rem;
+  padding: 2rem 0;
+  text-transform: uppercase;
+
+  .content-area {
+    display: flex;
+    justify-content: space-between;
+  }
+}

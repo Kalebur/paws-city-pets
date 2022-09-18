@@ -122,7 +122,6 @@ main {
         align-items: flex-start;
 
         h2 {
-          font-size: 4rem;
           margin-bottom: -1rem;
         }
 
@@ -204,7 +203,6 @@ main {
       h2 {
         margin-top: 8rem;
         margin-bottom: 5rem;
-        font-size: 5rem;
       }
 
       p {
@@ -222,7 +220,6 @@ main {
 
     h2 {
       color: $color-blue;
-      font-size: 4rem;
     }
 
     p {
@@ -250,25 +247,201 @@ main {
         p {
           margin: 2rem 0;
         }
-
-        .cart-button {
-          width: 100%;
-          font-size: 2rem;
-          display: block;
-          background-color: $color-orange;
-          padding: 1rem 0;
-          border-radius: $border-radius-small;
-          transition: $transition-default;
-
-          &:hover {
-            background-color: $color-orange-dark;
-            box-shadow: $shadow-default;
-            transform: translateY(-5px);
-          }
-        }
       }
     }
   }
 
   /* ABOUT PAWS CITY SECTION */
+  .about-us {
+    background-color: $color-red;
+
+    .content-area {
+      padding: 10rem 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10rem;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 6rem;
+    }
+
+    p {
+      font-size: 2.5rem;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  /* TESTIMONIALS SECTION */
+  .testimonials {
+    background-color: $color-white;
+
+    .content-area {
+      padding: 10rem 0;
+      text-align: center;
+      position: relative;
+
+      h2 {
+        color: $color-blue;
+      }
+
+      p {
+        color: $color-black;
+        font-size: 2.5rem;
+        margin: 6rem 0;
+      }
+
+      .testimonial {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5rem 2.5rem;
+        border-radius: $border-radius-default;
+        border: 2px solid $color-orange;
+        box-shadow: $shadow-default;
+
+        &-text {
+          text-align: left;
+          flex-basis: 60%;
+        }
+
+        p {
+          line-height: 3rem;
+        }
+
+        p:last-of-type {
+          font-weight: bold;
+          font-family: $font-serif;
+        }
+
+        &-photo {
+          border-radius: 50%;
+          background-color: orangered;
+          width: 300px;
+          height: 300px;
+          background: url("/assets/photos/testimonial-elaineb.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+
+        .next-button {
+          right: -10%;
+        }
+
+        .previous-button {
+          left: -10%;
+        }
+      }
+    }
+  }
+
+  /* CONTACT SECTION */
+  .contact-us {
+    background-color: $color-purple;
+    font-size: 2rem;
+
+    .content-area {
+      padding: 10rem 0;
+      display: flex;
+
+      h3 {
+        font-size: 3rem;
+        margin-bottom: 6rem;
+      }
+
+      .contact-info {
+        flex-basis: 50%;
+
+        h3:nth-of-type(2) {
+          margin-top: 6rem;
+        }
+
+        address {
+          text-transform: uppercase;
+          line-height: 3rem;
+          font-style: normal;
+          margin-bottom: 3rem;
+        }
+
+        p {
+          margin-bottom: 1rem;
+        }
+
+        .social-icons {
+          display: flex;
+
+          a {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            color: $color-purple;
+            background-color: $color-purple-light;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            transition: $transition-default;
+
+            &:not(:last-of-type) {
+              margin-right: 1.5rem;
+            }
+
+            &:hover {
+              background-color: $color-white;
+            }
+          }
+        }
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+
+        label {
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          font-size: 2rem;
+          color: $color-black;
+          padding: 1rem 2rem;
+          margin-bottom: 3rem;
+          font-family: $font-sans;
+          border-radius: $border-radius-tiny;
+          border: 2px solid transparent;
+          transition: $transition-default;
+
+          &:focus {
+            outline: none;
+            border: 2px solid $color-orange;
+            box-shadow: 0 0 10px $color-orange;
+          }
+
+          &::placeholder {
+            text-transform: uppercase;
+          }
+        }
+
+        textarea {
+          resize: none;
+        }
+
+        button {
+          font-weight: 600;
+        }
+      }
+    }
+  }
 }

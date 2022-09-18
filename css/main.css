@@ -153,6 +153,7 @@ main {
   /* PETS SECTION */
   /* ABOUT DOGGO SECTION */
   /* TOP RECOMMENDATIONS */
+  /* ABOUT PAWS CITY SECTION */
 }
 main .hero {
   background-color: #f7b219;
@@ -317,15 +318,15 @@ main .about-doggo img {
   margin-right: 5rem;
   align-self: end;
 }
-main .about-doggo .about-right {
+main .about-doggo .about-info {
   padding-left: 5rem;
 }
-main .about-doggo .about-right h2 {
+main .about-doggo .about-info h2 {
   margin-top: 8rem;
   margin-bottom: 5rem;
   font-size: 5rem;
 }
-main .about-doggo .about-right p {
+main .about-doggo .about-info p {
   font-size: 2rem;
   line-height: 4rem;
 }

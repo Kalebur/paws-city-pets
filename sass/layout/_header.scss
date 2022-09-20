@@ -2,7 +2,6 @@ header {
   color: $color-white;
   display: flex;
   flex-direction: column;
-  z-index: 1;
 
   a:hover,
   a:active {
@@ -14,14 +13,31 @@ header {
 
     .content-area {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 10px;
+      padding: $padding-default;
       font-size: 1.6rem;
       position: relative;
 
-      &:first-child a {
-        margin-left: 1rem;
+      P:first-of-type {
+        display: none;
+      }
+
+      p:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        span {
+          display: none;
+        }
+      }
+
+      &:first-child {
+        a {
+          margin-left: 1rem;
+        }
       }
 
       p {
@@ -46,21 +62,21 @@ header {
 
     .content-area {
       background-color: $color-blue;
-      flex-grow: 2;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: 25px;
       position: relative;
-      box-shadow: $shadow-default;
+      padding: $padding-default;
 
       img {
         flex-shrink: 1;
-        max-width: 15%;
+        max-width: 40%;
+        margin-bottom: 1rem;
       }
 
       .input-group {
-        width: 50%;
+        width: 100%;
         position: relative;
 
         button {
@@ -73,6 +89,11 @@ header {
           right: 0;
           border-top-right-radius: 10px;
           border-bottom-right-radius: 10px;
+          transition: $transition-default;
+
+          &:hover {
+            background-color: $color-yellow;
+          }
         }
 
         input {
@@ -82,11 +103,51 @@ header {
           border-radius: 10px;
           border: none;
           color: $color-gray-1;
+          padding-right: 9rem;
 
           &::placeholder {
             text-transform: uppercase;
             letter-spacing: 1px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    .header-top {
+      .content-area {
+        flex-direction: row;
+
+        p:first-of-type {
+          display: block;
+        }
+
+        p:nth-child(2) {
+          flex-direction: row;
+
+          span {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .header-bottom {
+      .content-area {
+        flex-direction: row;
+        padding: 2.5rem;
+        box-shadow: $shadow-default;
+
+        img {
+          max-width: 20%;
+          margin-bottom: 0;
+        }
+
+        .input-group {
+          width: 50%;
         }
       }
     }

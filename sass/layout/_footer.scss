@@ -1,11 +1,42 @@
 footer {
   background-color: $color-blue;
-  font-size: 1.6rem;
-  padding: 2rem 0;
+  font-size: 2rem;
+  padding: 2rem;
   text-transform: uppercase;
 
   .content-area {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+
+    p {
+      font-weight: 300;
+    }
+
+    p:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  footer {
+    padding: 2rem 0;
+    font-size: 1.6rem;
+    padding: 2rem 0;
+
+    .content-area {
+      flex-direction: row;
+      text-align: left;
+
+      p {
+        font-weight: inherit;
+      }
+
+      p:not(:last-of-type) {
+        margin-bottom: 0;
+      }
+    }
   }
 }

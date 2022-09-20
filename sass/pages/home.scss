@@ -6,72 +6,123 @@ main {
 
     .content-area {
       background: url("/assets/photos/puppy-hero-bg.jpg");
-      background-size: 160%;
-      background-position: 70% 65%;
+      background-size: 350%;
+      background-position: 70% 60%;
       background-repeat: no-repeat;
       height: 100%;
-      padding-bottom: 18rem;
+      padding-bottom: 25rem;
       color: $color-blue-dark;
     }
 
     nav {
       width: 100%;
+      height: 100vh;
       color: $color-white;
-      border-bottom-left-radius: $border-radius-default;
-      border-bottom-right-radius: $border-radius-default;
       overflow: hidden;
-      box-shadow: $shadow-default;
-      top: 0;
+      top: -110vh;
       font-family: $font-serif;
+      position: fixed;
+      z-index: 1;
+
+      .menu-button {
+        color: $color-blue;
+        padding: 1rem;
+        font-size: 4rem;
+        width: 7.5rem;
+        height: 7.5rem;
+        background-color: $color-yellow;
+        border-radius: 50%;
+        position: fixed;
+        right: 3%;
+        top: 8%;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          pointer-events: none;
+        }
+      }
 
       ul {
-        display: flex;
+        display: grid;
+        height: 100%;
 
-        li {
-          flex-grow: 1;
-          flex-basis: 20%;
+        a {
           font-size: 2.5rem;
-          text-align: center;
-          padding: 3rem 0;
           font-weight: bold;
+
+          li {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 0;
+            height: 100%;
+            transition: $transition-default;
+          }
         }
 
         /* STYLES FOR NAVIGATION MENU ITEMS */
 
         .menu-dogs {
           background-color: $color-red;
+
+          &:hover {
+            background-color: darken($color-red, 10%);
+          }
         }
 
         .menu-cats {
           background-color: $color-purple;
+
+          &:hover {
+            background-color: darken($color-purple, 10%);
+          }
         }
 
         .menu-birds {
           background-color: $color-orange;
+
+          &:hover {
+            background-color: darken($color-orange, 10%);
+          }
         }
 
         .menu-fish {
           background-color: $color-blue-light;
+
+          &:hover {
+            background-color: darken($color-blue-light, 10%);
+          }
         }
 
         .menu-reptiles {
           background-color: $color-green;
+
+          &:hover {
+            background-color: darken($color-green, 10%);
+          }
         }
       }
     }
 
+    /* HERO SECTION */
+
     h1 {
-      font-size: 4.2rem;
+      font-size: 3rem;
       font-weight: 600;
       text-transform: uppercase;
-      width: 50%;
+      padding: 0 1.5rem;
       margin-top: 10rem;
     }
 
     p {
-      margin: 6rem 0;
-      width: 45%;
-      font-size: 2rem;
+      margin: 1rem 0;
+      padding: 0 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 400;
     }
 
     [data-id="schedule-button"] {
@@ -79,7 +130,9 @@ main {
       font-weight: bold;
       padding: 2rem 6rem;
       border-radius: $border-radius-default;
-      font-family: "Roboto Slab", serif;
+      font-family: $font-serif;
+      margin: 4rem auto;
+      display: block;
       transition: $transition-default;
 
       &:hover {
@@ -93,23 +146,15 @@ main {
   /* PETS SECTION */
   .pet-types {
     background-color: $color-white;
-    padding: 10rem 0;
 
     .content-area {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 400px 400px;
-      grid-template-areas:
-        "dogs dogs cats"
-        "birds fish reptiles";
-      gap: 2.5rem;
-
-      color: $color-white;
+      display: flex;
+      flex-direction: column;
     }
 
     .pet-type-card {
       width: 100%;
-      height: 100%;
+      height: 50rem;
       padding: 2rem;
       position: relative;
 
@@ -145,22 +190,24 @@ main {
 
     .pet-dogs {
       background: url("/assets/photos/dogs.jpg");
-      background-size: 160%;
-      background-position: 10% 72.5%;
+      background-size: 250%;
+      background-position: 5% 72.5%;
       grid-area: dogs;
     }
 
     .pet-cats {
       background: url("/assets/photos/cats.jpg");
-      background-size: 160%;
+      background-size: cover;
       background-position: 60% 100%;
+      background-repeat: no-repeat;
       grid-area: cats;
     }
 
     .pet-birds {
       background: url("/assets/photos/birds.jpg");
-      background-size: 125%;
+      background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       grid-area: birds;
     }
 
@@ -186,28 +233,30 @@ main {
 
     .content-area {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      column-gap: 5rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
 
     img {
       display: block;
       width: 100%;
-      margin-right: 5rem;
+      order: 1;
       align-self: end;
     }
 
     .about-info {
-      padding-left: 5rem;
-
       h2 {
         margin-top: 8rem;
         margin-bottom: 5rem;
+        text-align: center;
       }
 
       p {
         font-size: 2rem;
-        line-height: 4rem;
+        font-weight: 300;
+        line-height: 3.5rem;
       }
     }
   }
@@ -216,15 +265,17 @@ main {
   .featured-products {
     background-color: $color-white;
     text-align: center;
-    padding: 15rem 0;
+    padding: 15rem 1rem;
 
     h2 {
       color: $color-blue;
+      font-size: 3rem;
     }
 
     p {
       color: $color-black;
-      font-size: 2.5rem;
+      font-size: 2rem;
+      font-weight: 300;
       margin: 5rem 0;
     }
 
@@ -236,10 +287,13 @@ main {
 
     .products {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      row-gap: 8rem;
+      justify-items: center;
 
       .product-card {
+        width: 75%;
+
         img {
           width: 100%;
         }
@@ -256,24 +310,29 @@ main {
     background-color: $color-red;
 
     .content-area {
-      padding: 10rem 0;
+      padding-bottom: 10rem;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 10rem;
       align-items: center;
     }
 
     h2 {
-      margin-bottom: 6rem;
+      font-size: 3rem;
+      margin: 6rem 0;
+      text-align: center;
+      padding: 0 2.5rem;
     }
 
     p {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
+      line-height: 4rem;
+      padding: 0 1.5rem;
+      font-weight: 300;
     }
 
     img {
       width: 100%;
       display: block;
+      order: -1;
     }
   }
 
@@ -285,20 +344,24 @@ main {
       padding: 10rem 0;
       text-align: center;
       position: relative;
+      width: 80%;
 
       h2 {
         color: $color-blue;
+        font-size: 3rem;
       }
 
       p {
         color: $color-black;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        line-height: 3rem;
         margin: 6rem 0;
       }
 
       .testimonial {
         background-color: #fff;
         display: flex;
+        flex-direction: column-reverse;
         justify-content: space-between;
         align-items: center;
         padding: 5rem 2.5rem;
@@ -312,30 +375,28 @@ main {
         }
 
         p {
-          line-height: 3rem;
+          line-height: 2.5rem;
         }
 
         p:last-of-type {
           font-weight: bold;
           font-family: $font-serif;
+          text-align: center;
+          font-size: 2.5rem;
         }
 
         &-photo {
           border-radius: 50%;
-          background-color: orangered;
-          width: 300px;
-          height: 300px;
+          width: 250px;
+          height: 250px;
           background: url("/assets/photos/testimonial-elaineb.jpg");
           background-size: cover;
           background-position: center;
         }
 
-        .next-button {
-          right: -10%;
-        }
-
+        .next-button,
         .previous-button {
-          left: -10%;
+          display: none;
         }
       }
     }
@@ -345,10 +406,12 @@ main {
   .contact-us {
     background-color: $color-purple;
     font-size: 2rem;
+    padding: 0 4rem;
 
     .content-area {
       padding: 10rem 0;
       display: flex;
+      flex-direction: column;
 
       h3 {
         font-size: 3rem;
@@ -375,6 +438,7 @@ main {
 
         .social-icons {
           display: flex;
+          margin-bottom: 10rem;
 
           a {
             display: inline-block;
@@ -422,16 +486,6 @@ main {
           border-radius: $border-radius-tiny;
           border: 2px solid transparent;
           transition: $transition-default;
-
-          &:focus {
-            outline: none;
-            border: 2px solid $color-orange;
-            box-shadow: 0 0 10px $color-orange;
-          }
-
-          &::placeholder {
-            text-transform: uppercase;
-          }
         }
 
         textarea {
@@ -440,6 +494,279 @@ main {
 
         button {
           font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+/* MISC MOBILE PHONE STYLES */
+@media screen and (max-width: 400px) {
+  main {
+    .hero {
+      .content-area {
+        nav {
+          .menu-button {
+            top: 10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* TABLET STYLES */
+
+@media screen and (min-width: 600px) {
+  main {
+    .hero {
+      .content-area {
+        nav {
+          // display: flex;
+          position: initial;
+          height: initial;
+          width: 100%;
+
+          .menu-button {
+            display: none;
+          }
+
+          ul {
+            display: flex;
+            height: initial;
+
+            a {
+              flex-grow: 1;
+              flex-basis: 20%;
+            }
+          }
+        }
+      }
+    }
+    .about-doggo {
+      .content-area {
+        width: 60%;
+      }
+    }
+
+    .about-us {
+      .content-area {
+        width: 60%;
+        padding: 15rem 0;
+
+        h2 span {
+          display: none;
+        }
+      }
+    }
+
+    .testimonials {
+      .content-area {
+        width: 60%;
+        .testimonial {
+          .next-button,
+          .previous-button {
+            display: block;
+            top: 50%;
+            transform: translateY(50%);
+          }
+
+          .next-button {
+            right: -25%;
+          }
+
+          .previous-button {
+            left: -25%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* LAPTOP & DESKTOP STYLES */
+
+@media screen and (min-width: 1200px) {
+  main {
+    .hero {
+      .content-area {
+        background-size: 160%;
+        background-position: 70% 65%;
+        background-repeat: no-repeat;
+        padding-bottom: 18rem;
+
+        nav {
+          border-bottom-left-radius: $border-radius-default;
+          border-bottom-right-radius: $border-radius-default;
+          box-shadow: $shadow-default;
+        }
+
+        h1 {
+          width: 50%;
+          padding: 0;
+
+          font-size: 4.2rem;
+        }
+
+        p {
+          padding: 0;
+          width: 45%;
+          margin: 6rem 0;
+
+          font-size: 2rem;
+          font-weight: inherit;
+        }
+
+        [data-id="schedule-button"] {
+          font-size: 2.5rem;
+          font-weight: bold;
+          padding: 2rem 6rem;
+          margin: initial;
+          border-radius: $border-radius-default;
+          transition: $transition-default;
+
+          &:hover {
+            transition: $transition-default;
+            transform: translateY(-0.5rem);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+          }
+        }
+      }
+    }
+
+    .pet-types {
+      padding: 10rem 0;
+
+      .content-area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 400px);
+        grid-template-areas:
+          "dogs dogs cats"
+          "birds fish reptiles";
+        gap: 2.5rem;
+
+        .pet-type-card {
+          height: 100%;
+        }
+
+        .pet-dogs {
+          background-size: 160%;
+          background-position: 10% 72.5%;
+        }
+      }
+    }
+
+    .about-doggo {
+      .content-area {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        width: 50%;
+
+        img {
+          order: 0;
+        }
+
+        .about-info {
+          margin-left: 5rem;
+
+          h2 {
+            text-align: left;
+          }
+
+          p {
+            font-weight: inherit;
+          }
+        }
+      }
+    }
+
+    .featured-products {
+      h2 {
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 2.5rem;
+        font-weight: inherit;
+      }
+      .products {
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: initial;
+        gap: 2rem;
+
+        .product-card {
+          width: 100%;
+        }
+      }
+    }
+
+    .about-us {
+      .content-area {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10rem;
+        padding: 10rem 0;
+        width: 50%;
+      }
+
+      h2 {
+        font-size: 4rem;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 6rem;
+      }
+
+      p {
+        font-size: 2.5rem;
+        font-weight: inherit;
+        padding: 0;
+      }
+
+      img {
+        width: 80%;
+        order: 0;
+      }
+    }
+
+    .testimonials {
+      .content-area {
+        width: 50%;
+
+        h2 {
+          font-size: 4rem;
+        }
+
+        p {
+          font-size: 2.5rem;
+          line-height: initial;
+        }
+
+        .testimonial {
+          flex-direction: row;
+
+          p {
+            line-height: 3rem;
+          }
+
+          p:last-of-type {
+            font-weight: bold;
+            font-family: $font-serif;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    .contact-us {
+      padding: 0;
+
+      .content-area {
+        flex-direction: row;
+
+        .social-icons {
+          margin-bottom: 0;
         }
       }
     }

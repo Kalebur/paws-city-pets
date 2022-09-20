@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500;600;700&family=Roboto:wght@100;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500;600;700&family=Roboto:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -61,22 +61,15 @@
       <section class="hero">
         <div class="content-area">
           <nav>
+            <a class="menu-button" id="menu-button" href="#menu-button"
+              ><i class="fa-solid fa-bars"></i
+            ></a>
             <ul>
-              <li class="menu-dogs">
-                <a href="">Dogs</a>
-              </li>
-              <li class="menu-cats">
-                <a href="">Cats</a>
-              </li>
-              <li class="menu-birds">
-                <a href="">Birds</a>
-              </li>
-              <li class="menu-fish">
-                <a href="">Fish</a>
-              </li>
-              <li class="menu-reptiles">
-                <a href="">Reptiles</a>
-              </li>
+              <a href=""><li class="menu-dogs">Dogs</li></a>
+              <a href=""><li class="menu-cats">Cats</li></a>
+              <a href=""><li class="menu-birds">Birds</li></a>
+              <a href=""><li class="menu-fish">Fish</li></a>
+              <a href=""><li class="menu-reptiles">Reptiles</li></a>
             </ul>
           </nav>
           <h1>The best care for your little one</h1>
@@ -139,8 +132,7 @@
               pats long doggo borkdrive, sub woofer waggy wags tungg fat boi.
               Shoob dat tungg tho very taste wow noodle horse boof long bois
               shoober long woofer, super chub maximum borkdrive such treat dat
-              tungg tho smol borking doggo with a long snoot for pats.Big ol
-              pupper long doggo doggo, aqua doggo.
+              tungg tho smol borking doggo with a long snoot for pats.
             </p>
           </div>
         </div>
@@ -195,7 +187,7 @@
       <section class="about-us">
         <div class="content-area">
           <div class="about-info">
-            <h2>About Paws City</h2>
+            <h2>About Paws City <span>Pet Supply Co.</span></h2>
             <p>
               Paws City is a fine retailer that offers goods for your pets: cats
               and dogs, fish, rabbits, birds, and many other animals. We sell
@@ -210,6 +202,7 @@
           />
         </div>
       </section>
+      <!-- TODO: Write up 2-3 more testimonials -->
       <section class="testimonials">
         <div class="content-area">
           <h2>Testimonials by Our Clients</h2>
@@ -262,7 +255,7 @@
               ></a>
             </div>
           </div>
-          <form action="" class="contact-form">
+          <form action="" class="contact-form" method="post">
             <h3>Contact</h3>
             <label for="full-name">Name:</label>
             <input
@@ -286,10 +279,12 @@
               id="message"
               cols="30"
               rows="5"
-              placeholder="Please send us a message..."
+              placeholder="Send us a message..."
               required
             ></textarea>
-            <button class="btn-orange">Send Message</button>
+            <button class="btn-orange" data-id="contact-btn">
+              Send Message
+            </button>
           </form>
         </div>
       </section>

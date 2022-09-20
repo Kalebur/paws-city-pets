@@ -10,7 +10,7 @@
 
 body,
 html {
-  background-color: black;
+  background-color: #f7b219;
   font-size: 62.5%;
   overflow-x: hidden;
   color: #eff3f7;
@@ -36,14 +36,8 @@ h2 {
   font-size: 4rem;
 }
 
-header,
-main,
-footer {
-  background-color: orangered;
-}
-
 .content-area {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -54,6 +48,10 @@ button,
   color: #eff3f7;
   text-transform: uppercase;
   cursor: pointer;
+}
+button:active,
+.button:active {
+  outline: none;
 }
 
 .showcase-btn {
@@ -92,22 +90,83 @@ a:visited {
   text-decoration: none;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 3px solid #f88824;
+  box-shadow: 0 0 20px #f88824;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  text-transform: uppercase;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  text-transform: uppercase;
+}
+input::placeholder,
+textarea::placeholder {
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 800px) {
+  .content-area {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .content-area {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .content-area {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .content-area {
+    width: 50%;
+  }
+}
 footer {
   background-color: #074980;
-  font-size: 1.6rem;
-  padding: 2rem 0;
+  font-size: 2rem;
+  padding: 2rem;
   text-transform: uppercase;
 }
 footer .content-area {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+}
+footer .content-area p {
+  font-weight: 300;
+}
+footer .content-area p:not(:last-of-type) {
+  margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 1200px) {
+  footer {
+    padding: 2rem 0;
+    font-size: 1.6rem;
+    padding: 2rem 0;
+  }
+  footer .content-area {
+    flex-direction: row;
+    text-align: left;
+  }
+  footer .content-area p {
+    font-weight: inherit;
+  }
+  footer .content-area p:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+}
 header {
   color: #eff3f7;
   display: flex;
   flex-direction: column;
-  z-index: 1;
 }
 header a:hover,
 header a:active {
@@ -118,11 +177,23 @@ header .header-top {
 }
 header .header-top .content-area {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 1.5rem;
   font-size: 1.6rem;
   position: relative;
+}
+header .header-top .content-area P:first-of-type {
+  display: none;
+}
+header .header-top .content-area p:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+header .header-top .content-area p:nth-child(2) span {
+  display: none;
 }
 header .header-top .content-area:first-child a {
   margin-left: 1rem;
@@ -145,20 +216,20 @@ header .header-bottom {
 }
 header .header-bottom .content-area {
   background-color: #074980;
-  flex-grow: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 25px;
   position: relative;
-  box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
+  padding: 1.5rem;
 }
 header .header-bottom .content-area img {
   flex-shrink: 1;
-  max-width: 15%;
+  max-width: 40%;
+  margin-bottom: 1rem;
 }
 header .header-bottom .content-area .input-group {
-  width: 50%;
+  width: 100%;
   position: relative;
 }
 header .header-bottom .content-area .input-group button {
@@ -171,6 +242,10 @@ header .header-bottom .content-area .input-group button {
   right: 0;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  transition: all 0.4s;
+}
+header .header-bottom .content-area .input-group button:hover {
+  background-color: #f7b219;
 }
 header .header-bottom .content-area .input-group input {
   font-size: 3rem;
@@ -179,6 +254,7 @@ header .header-bottom .content-area .input-group input {
   border-radius: 10px;
   border: none;
   color: rgb(97, 97, 97);
+  padding-right: 9rem;
 }
 header .header-bottom .content-area .input-group input::-moz-placeholder {
   text-transform: uppercase;
@@ -193,6 +269,32 @@ header .header-bottom .content-area .input-group input::placeholder {
   letter-spacing: 1px;
 }
 
+@media screen and (min-width: 1200px) {
+  header .header-top .content-area {
+    flex-direction: row;
+  }
+  header .header-top .content-area p:first-of-type {
+    display: block;
+  }
+  header .header-top .content-area p:nth-child(2) {
+    flex-direction: row;
+  }
+  header .header-top .content-area p:nth-child(2) span {
+    display: inline-block;
+  }
+  header .header-bottom .content-area {
+    flex-direction: row;
+    padding: 2.5rem;
+    box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
+  }
+  header .header-bottom .content-area img {
+    max-width: 20%;
+    margin-bottom: 0;
+  }
+  header .header-bottom .content-area .input-group {
+    width: 50%;
+  }
+}
 main {
   /* PETS SECTION */
   /* ABOUT DOGGO SECTION */
@@ -203,64 +305,106 @@ main {
 }
 main .hero {
   background-color: #f7b219;
+  /* HERO SECTION */
 }
 main .hero .content-area {
   background: url("/assets/photos/puppy-hero-bg.jpg");
-  background-size: 160%;
-  background-position: 70% 65%;
+  background-size: 350%;
+  background-position: 70% 60%;
   background-repeat: no-repeat;
   height: 100%;
-  padding-bottom: 18rem;
+  padding-bottom: 25rem;
   color: #003964;
 }
 main .hero nav {
   width: 100%;
+  height: 100vh;
   color: #eff3f7;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
-  top: 0;
+  top: -110vh;
   font-family: "Roboto Slab", serif;
+  position: fixed;
+  z-index: 1;
+}
+main .hero nav .menu-button {
+  color: #074980;
+  padding: 1rem;
+  font-size: 4rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: #f7b219;
+  border-radius: 50%;
+  position: fixed;
+  right: 3%;
+  top: 8%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .hero nav .menu-button i {
+  pointer-events: none;
 }
 main .hero nav ul {
-  display: flex;
+  display: grid;
+  height: 100%;
   /* STYLES FOR NAVIGATION MENU ITEMS */
 }
-main .hero nav ul li {
-  flex-grow: 1;
-  flex-basis: 20%;
+main .hero nav ul a {
   font-size: 2.5rem;
-  text-align: center;
-  padding: 3rem 0;
   font-weight: bold;
+}
+main .hero nav ul a li {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  height: 100%;
+  transition: all 0.4s;
 }
 main .hero nav ul .menu-dogs {
   background-color: #f85c62;
 }
+main .hero nav ul .menu-dogs:hover {
+  background-color: #f62b33;
+}
 main .hero nav ul .menu-cats {
   background-color: #8560a6;
+}
+main .hero nav ul .menu-cats:hover {
+  background-color: #6b4c87;
 }
 main .hero nav ul .menu-birds {
   background-color: #f88824;
 }
+main .hero nav ul .menu-birds:hover {
+  background-color: #e26e07;
+}
 main .hero nav ul .menu-fish {
   background-color: #3f9ce0;
+}
+main .hero nav ul .menu-fish:hover {
+  background-color: #2183cb;
 }
 main .hero nav ul .menu-reptiles {
   background-color: #39b173;
 }
+main .hero nav ul .menu-reptiles:hover {
+  background-color: #2d8a5a;
+}
 main .hero h1 {
-  font-size: 4.2rem;
+  font-size: 3rem;
   font-weight: 600;
   text-transform: uppercase;
-  width: 50%;
+  padding: 0 1.5rem;
   margin-top: 10rem;
 }
 main .hero p {
-  margin: 6rem 0;
-  width: 45%;
-  font-size: 2rem;
+  margin: 1rem 0;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 main .hero [data-id=schedule-button] {
   font-size: 2.5rem;
@@ -268,6 +412,8 @@ main .hero [data-id=schedule-button] {
   padding: 2rem 6rem;
   border-radius: 20px;
   font-family: "Roboto Slab", serif;
+  margin: 4rem auto;
+  display: block;
   transition: all 0.4s;
 }
 main .hero [data-id=schedule-button]:hover {
@@ -277,19 +423,14 @@ main .hero [data-id=schedule-button]:hover {
 }
 main .pet-types {
   background-color: #eff3f7;
-  padding: 10rem 0;
 }
 main .pet-types .content-area {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 400px 400px;
-  grid-template-areas: "dogs dogs cats" "birds fish reptiles";
-  gap: 2.5rem;
-  color: #eff3f7;
+  display: flex;
+  flex-direction: column;
 }
 main .pet-types .pet-type-card {
   width: 100%;
-  height: 100%;
+  height: 50rem;
   padding: 2rem;
   position: relative;
 }
@@ -320,20 +461,22 @@ main .pet-types .pet-type-card .card-info .button {
 }
 main .pet-types .pet-dogs {
   background: url("/assets/photos/dogs.jpg");
-  background-size: 160%;
-  background-position: 10% 72.5%;
+  background-size: 250%;
+  background-position: 5% 72.5%;
   grid-area: dogs;
 }
 main .pet-types .pet-cats {
   background: url("/assets/photos/cats.jpg");
-  background-size: 160%;
+  background-size: cover;
   background-position: 60% 100%;
+  background-repeat: no-repeat;
   grid-area: cats;
 }
 main .pet-types .pet-birds {
   background: url("/assets/photos/birds.jpg");
-  background-size: 125%;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   grid-area: birds;
 }
 main .pet-types .pet-fish {
@@ -354,37 +497,41 @@ main .about-doggo {
 }
 main .about-doggo .content-area {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 main .about-doggo img {
   display: block;
   width: 100%;
-  margin-right: 5rem;
+  order: 1;
   align-self: end;
-}
-main .about-doggo .about-info {
-  padding-left: 5rem;
 }
 main .about-doggo .about-info h2 {
   margin-top: 8rem;
   margin-bottom: 5rem;
+  text-align: center;
 }
 main .about-doggo .about-info p {
   font-size: 2rem;
-  line-height: 4rem;
+  font-weight: 300;
+  line-height: 3.5rem;
 }
 main .featured-products {
   background-color: #eff3f7;
   text-align: center;
-  padding: 15rem 0;
+  padding: 15rem 1rem;
 }
 main .featured-products h2 {
   color: #074980;
+  font-size: 3rem;
 }
 main .featured-products p {
   color: #222;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 300;
   margin: 5rem 0;
 }
 main .featured-products h3 {
@@ -394,8 +541,12 @@ main .featured-products h3 {
 }
 main .featured-products .products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  row-gap: 8rem;
+  justify-items: center;
+}
+main .featured-products .products .product-card {
+  width: 75%;
 }
 main .featured-products .products .product-card img {
   width: 100%;
@@ -407,22 +558,26 @@ main .about-us {
   background-color: #f85c62;
 }
 main .about-us .content-area {
-  padding: 10rem 0;
+  padding-bottom: 10rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  -moz-column-gap: 10rem;
-       column-gap: 10rem;
   align-items: center;
 }
 main .about-us h2 {
-  margin-bottom: 6rem;
+  font-size: 3rem;
+  margin: 6rem 0;
+  text-align: center;
+  padding: 0 2.5rem;
 }
 main .about-us p {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
+  line-height: 4rem;
+  padding: 0 1.5rem;
+  font-weight: 300;
 }
 main .about-us img {
   width: 100%;
   display: block;
+  order: -1;
 }
 main .testimonials {
   background-color: #eff3f7;
@@ -431,18 +586,22 @@ main .testimonials .content-area {
   padding: 10rem 0;
   text-align: center;
   position: relative;
+  width: 80%;
 }
 main .testimonials .content-area h2 {
   color: #074980;
+  font-size: 3rem;
 }
 main .testimonials .content-area p {
   color: #222;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
   margin: 6rem 0;
 }
 main .testimonials .content-area .testimonial {
   background-color: #fff;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
   padding: 5rem 2.5rem;
@@ -455,34 +614,35 @@ main .testimonials .content-area .testimonial-text {
   flex-basis: 60%;
 }
 main .testimonials .content-area .testimonial p {
-  line-height: 3rem;
+  line-height: 2.5rem;
 }
 main .testimonials .content-area .testimonial p:last-of-type {
   font-weight: bold;
   font-family: "Roboto Slab", serif;
+  text-align: center;
+  font-size: 2.5rem;
 }
 main .testimonials .content-area .testimonial-photo {
   border-radius: 50%;
-  background-color: orangered;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background: url("/assets/photos/testimonial-elaineb.jpg");
   background-size: cover;
   background-position: center;
 }
-main .testimonials .content-area .testimonial .next-button {
-  right: -10%;
-}
+main .testimonials .content-area .testimonial .next-button,
 main .testimonials .content-area .testimonial .previous-button {
-  left: -10%;
+  display: none;
 }
 main .contact-us {
   background-color: #8560a6;
   font-size: 2rem;
+  padding: 0 4rem;
 }
 main .contact-us .content-area {
   padding: 10rem 0;
   display: flex;
+  flex-direction: column;
 }
 main .contact-us .content-area h3 {
   font-size: 3rem;
@@ -505,6 +665,7 @@ main .contact-us .content-area .contact-info p {
 }
 main .contact-us .content-area .contact-info .social-icons {
   display: flex;
+  margin-bottom: 10rem;
 }
 main .contact-us .content-area .contact-info .social-icons a {
   display: inline-block;
@@ -547,25 +708,202 @@ main .contact-us .content-area .contact-form textarea {
   border: 2px solid transparent;
   transition: all 0.4s;
 }
-main .contact-us .content-area .contact-form input:focus,
-main .contact-us .content-area .contact-form textarea:focus {
-  outline: none;
-  border: 2px solid #f88824;
-  box-shadow: 0 0 10px #f88824;
-}
-main .contact-us .content-area .contact-form input::-moz-placeholder, main .contact-us .content-area .contact-form textarea::-moz-placeholder {
-  text-transform: uppercase;
-}
-main .contact-us .content-area .contact-form input:-ms-input-placeholder, main .contact-us .content-area .contact-form textarea:-ms-input-placeholder {
-  text-transform: uppercase;
-}
-main .contact-us .content-area .contact-form input::placeholder,
-main .contact-us .content-area .contact-form textarea::placeholder {
-  text-transform: uppercase;
-}
 main .contact-us .content-area .contact-form textarea {
   resize: none;
 }
 main .contact-us .content-area .contact-form button {
   font-weight: 600;
+}
+
+/* MISC MOBILE PHONE STYLES */
+@media screen and (max-width: 400px) {
+  main .hero .content-area nav .menu-button {
+    top: 10%;
+  }
+}
+/* TABLET STYLES */
+@media screen and (min-width: 600px) {
+  main .hero .content-area nav {
+    position: initial;
+    height: initial;
+    width: 100%;
+  }
+  main .hero .content-area nav .menu-button {
+    display: none;
+  }
+  main .hero .content-area nav ul {
+    display: flex;
+    height: initial;
+  }
+  main .hero .content-area nav ul a {
+    flex-grow: 1;
+    flex-basis: 20%;
+  }
+  main .about-doggo .content-area {
+    width: 60%;
+  }
+  main .about-us .content-area {
+    width: 60%;
+    padding: 15rem 0;
+  }
+  main .about-us .content-area h2 span {
+    display: none;
+  }
+  main .testimonials .content-area {
+    width: 60%;
+  }
+  main .testimonials .content-area .testimonial .next-button,
+main .testimonials .content-area .testimonial .previous-button {
+    display: block;
+    top: 50%;
+    transform: translateY(50%);
+  }
+  main .testimonials .content-area .testimonial .next-button {
+    right: -25%;
+  }
+  main .testimonials .content-area .testimonial .previous-button {
+    left: -25%;
+  }
+}
+/* LAPTOP & DESKTOP STYLES */
+@media screen and (min-width: 1200px) {
+  main .hero .content-area {
+    background-size: 160%;
+    background-position: 70% 65%;
+    background-repeat: no-repeat;
+    padding-bottom: 18rem;
+  }
+  main .hero .content-area nav {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
+  }
+  main .hero .content-area h1 {
+    width: 50%;
+    padding: 0;
+    font-size: 4.2rem;
+  }
+  main .hero .content-area p {
+    padding: 0;
+    width: 45%;
+    margin: 6rem 0;
+    font-size: 2rem;
+    font-weight: inherit;
+  }
+  main .hero .content-area [data-id=schedule-button] {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 2rem 6rem;
+    margin: initial;
+    border-radius: 20px;
+    transition: all 0.4s;
+  }
+  main .hero .content-area [data-id=schedule-button]:hover {
+    transition: all 0.4s;
+    transform: translateY(-0.5rem);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  }
+  main .pet-types {
+    padding: 10rem 0;
+  }
+  main .pet-types .content-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 400px);
+    grid-template-areas: "dogs dogs cats" "birds fish reptiles";
+    gap: 2.5rem;
+  }
+  main .pet-types .content-area .pet-type-card {
+    height: 100%;
+  }
+  main .pet-types .content-area .pet-dogs {
+    background-size: 160%;
+    background-position: 10% 72.5%;
+  }
+  main .about-doggo .content-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 50%;
+  }
+  main .about-doggo .content-area img {
+    order: 0;
+  }
+  main .about-doggo .content-area .about-info {
+    margin-left: 5rem;
+  }
+  main .about-doggo .content-area .about-info h2 {
+    text-align: left;
+  }
+  main .about-doggo .content-area .about-info p {
+    font-weight: inherit;
+  }
+  main .featured-products h2 {
+    font-size: 4rem;
+  }
+  main .featured-products p {
+    font-size: 2.5rem;
+    font-weight: inherit;
+  }
+  main .featured-products .products {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: initial;
+    gap: 2rem;
+  }
+  main .featured-products .products .product-card {
+    width: 100%;
+  }
+  main .about-us .content-area {
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+    padding: 10rem 0;
+    width: 50%;
+  }
+  main .about-us h2 {
+    font-size: 4rem;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 6rem;
+  }
+  main .about-us p {
+    font-size: 2.5rem;
+    font-weight: inherit;
+    padding: 0;
+  }
+  main .about-us img {
+    width: 80%;
+    order: 0;
+  }
+  main .testimonials .content-area {
+    width: 50%;
+  }
+  main .testimonials .content-area h2 {
+    font-size: 4rem;
+  }
+  main .testimonials .content-area p {
+    font-size: 2.5rem;
+    line-height: initial;
+  }
+  main .testimonials .content-area .testimonial {
+    flex-direction: row;
+  }
+  main .testimonials .content-area .testimonial p {
+    line-height: 3rem;
+  }
+  main .testimonials .content-area .testimonial p:last-of-type {
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    text-align: left;
+  }
+  main .contact-us {
+    padding: 0;
+  }
+  main .contact-us .content-area {
+    flex-direction: row;
+  }
+  main .contact-us .content-area .social-icons {
+    margin-bottom: 0;
+  }
 }

@@ -95,6 +95,7 @@ textarea:focus {
   outline: none;
   border: 3px solid #f88824;
   box-shadow: 0 0 20px #f88824;
+  transition: all 0.4s;
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
   text-transform: uppercase;
@@ -256,25 +257,11 @@ header .header-bottom .content-area .input-group input {
   color: rgb(97, 97, 97);
   padding-right: 9rem;
 }
-header .header-bottom .content-area .input-group input::-moz-placeholder {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-header .header-bottom .content-area .input-group input:-ms-input-placeholder {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-header .header-bottom .content-area .input-group input::placeholder {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 600px) {
   header .header-top .content-area {
     flex-direction: row;
-  }
-  header .header-top .content-area p:first-of-type {
-    display: block;
+    justify-content: center;
   }
   header .header-top .content-area p:nth-child(2) {
     flex-direction: row;
@@ -284,8 +271,28 @@ header .header-bottom .content-area .input-group input::placeholder {
   }
   header .header-bottom .content-area {
     flex-direction: row;
+  }
+  header .header-bottom .content-area img {
+    max-width: 20%;
+    margin-top: 1rem;
+  }
+  header .header-bottom .content-area .input-group {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header .header-top .content-area {
+    width: 50%;
+    justify-content: space-between;
+  }
+  header .header-top .content-area p:first-of-type {
+    display: block;
+  }
+  header .header-bottom .content-area {
+    flex-direction: row;
     padding: 2.5rem;
     box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
+    width: 50%;
   }
   header .header-bottom .content-area img {
     max-width: 20%;
@@ -415,11 +422,6 @@ main .hero [data-id=schedule-button] {
   margin: 4rem auto;
   display: block;
   transition: all 0.4s;
-}
-main .hero [data-id=schedule-button]:hover {
-  transition: all 0.4s;
-  transform: translateY(-0.5rem);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
 main .pet-types {
   background-color: #eff3f7;
@@ -666,6 +668,7 @@ main .contact-us .content-area .contact-info p {
 main .contact-us .content-area .contact-info .social-icons {
   display: flex;
   margin-bottom: 10rem;
+  justify-content: space-between;
 }
 main .contact-us .content-area .contact-info .social-icons a {
   display: inline-block;
@@ -699,14 +702,13 @@ main .contact-us .content-area .contact-form label {
 main .contact-us .content-area .contact-form input,
 main .contact-us .content-area .contact-form textarea {
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #222;
   padding: 1rem 2rem;
   margin-bottom: 3rem;
   font-family: "Roboto", "Franklin Gothic Medium", Tahoma, sans-serif;
   border-radius: 5px;
   border: 2px solid transparent;
-  transition: all 0.4s;
 }
 main .contact-us .content-area .contact-form textarea {
   resize: none;
@@ -723,6 +725,21 @@ main .contact-us .content-area .contact-form button {
 }
 /* TABLET STYLES */
 @media screen and (min-width: 600px) {
+  main .hero .content-area {
+    width: 100%;
+    background-size: 200%;
+    background-position: 70% 40%;
+  }
+  main .hero .content-area h1 {
+    margin-left: 2rem;
+    width: 60%;
+    font-size: 4rem;
+  }
+  main .hero .content-area p {
+    margin: 6rem 0 6rem 2rem;
+    width: 60%;
+    font-size: 2rem;
+  }
   main .hero .content-area nav {
     position: initial;
     height: initial;
@@ -739,8 +756,28 @@ main .contact-us .content-area .contact-form button {
     flex-grow: 1;
     flex-basis: 20%;
   }
+  main .hero .content-area [data-id=schedule-button] {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+  main .pet-types {
+    padding: 10rem 0;
+  }
+  main .pet-types .content-area {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "dogs cats" "birds fish" "reptiles reptiles";
+    gap: 4rem;
+  }
   main .about-doggo .content-area {
     width: 60%;
+  }
+  main .featured-products .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .featured-products h3 {
+    font-size: 1.6rem;
   }
   main .about-us .content-area {
     width: 60%;
@@ -764,6 +801,19 @@ main .testimonials .content-area .testimonial .previous-button {
   main .testimonials .content-area .testimonial .previous-button {
     left: -25%;
   }
+  main .contact-us .content-area {
+    text-align: center;
+  }
+  main .contact-us .content-area .contact-info .social-icons {
+    justify-content: center;
+  }
+  main .contact-us .content-area .contact-form {
+    text-align: left;
+  }
+  main .contact-us .content-area .contact-form input,
+main .contact-us .content-area .contact-form textarea {
+    font-size: 2rem;
+  }
 }
 /* LAPTOP & DESKTOP STYLES */
 @media screen and (min-width: 1200px) {
@@ -772,6 +822,7 @@ main .testimonials .content-area .testimonial .previous-button {
     background-position: 70% 65%;
     background-repeat: no-repeat;
     padding-bottom: 18rem;
+    width: 50%;
   }
   main .hero .content-area nav {
     border-bottom-left-radius: 20px;
@@ -799,6 +850,7 @@ main .testimonials .content-area .testimonial .previous-button {
     transition: all 0.4s;
   }
   main .hero .content-area [data-id=schedule-button]:hover {
+    background-color: #3f9ce0;
     transition: all 0.4s;
     transform: translateY(-0.5rem);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
@@ -812,6 +864,7 @@ main .testimonials .content-area .testimonial .previous-button {
     grid-template-rows: repeat(2, 400px);
     grid-template-areas: "dogs dogs cats" "birds fish reptiles";
     gap: 2.5rem;
+    width: 50%;
   }
   main .pet-types .content-area .pet-type-card {
     height: 100%;
@@ -843,7 +896,6 @@ main .testimonials .content-area .testimonial .previous-button {
   }
   main .featured-products p {
     font-size: 2.5rem;
-    font-weight: inherit;
   }
   main .featured-products .products {
     grid-template-columns: repeat(4, 1fr);
@@ -892,18 +944,33 @@ main .testimonials .content-area .testimonial .previous-button {
   main .testimonials .content-area .testimonial p {
     line-height: 3rem;
   }
+  main .testimonials .content-area .testimonial p:first-of-type {
+    font-weight: 400;
+  }
   main .testimonials .content-area .testimonial p:last-of-type {
     font-weight: bold;
     font-family: "Roboto Slab", serif;
     text-align: left;
+  }
+  main .testimonials .content-area .testimonial .next-button {
+    right: -10%;
+  }
+  main .testimonials .content-area .testimonial .previous-button {
+    left: -10%;
   }
   main .contact-us {
     padding: 0;
   }
   main .contact-us .content-area {
     flex-direction: row;
+    text-align: left;
   }
-  main .contact-us .content-area .social-icons {
+  main .contact-us .content-area .contact-info .social-icons {
     margin-bottom: 0;
+    justify-content: flex-start;
+  }
+  main .contact-us .content-area .contact-form input,
+main .contact-us .content-area .contact-form textarea {
+    font-size: 2rem;
   }
 }

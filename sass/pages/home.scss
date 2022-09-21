@@ -134,12 +134,6 @@ main {
       margin: 4rem auto;
       display: block;
       transition: $transition-default;
-
-      &:hover {
-        transition: $transition-default;
-        transform: translateY(-0.5rem);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
-      }
     }
   }
 
@@ -439,6 +433,7 @@ main {
         .social-icons {
           display: flex;
           margin-bottom: 10rem;
+          justify-content: space-between;
 
           a {
             display: inline-block;
@@ -478,14 +473,13 @@ main {
         input,
         textarea {
           width: 100%;
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: $color-black;
           padding: 1rem 2rem;
           margin-bottom: 3rem;
           font-family: $font-sans;
           border-radius: $border-radius-tiny;
           border: 2px solid transparent;
-          transition: $transition-default;
         }
 
         textarea {
@@ -521,6 +515,22 @@ main {
   main {
     .hero {
       .content-area {
+        width: 100%;
+        background-size: 200%;
+        background-position: 70% 40%;
+
+        h1 {
+          margin-left: 2rem;
+          width: 60%;
+          font-size: 4rem;
+        }
+
+        p {
+          margin: 6rem 0 6rem 2rem;
+          width: 60%;
+          font-size: 2rem;
+        }
+
         nav {
           // display: flex;
           position: initial;
@@ -541,11 +551,42 @@ main {
             }
           }
         }
+
+        [data-id="schedule-button"] {
+          margin-top: 0;
+          margin-left: 2rem;
+        }
       }
     }
+
+    .pet-types {
+      padding: 10rem 0;
+      .content-area {
+        width: 90%;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          "dogs cats"
+          "birds fish"
+          "reptiles reptiles";
+        gap: 4rem;
+      }
+    }
+
     .about-doggo {
       .content-area {
         width: 60%;
+      }
+    }
+
+    .featured-products {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h3 {
+        font-size: 1.6rem;
       }
     }
 
@@ -581,6 +622,27 @@ main {
         }
       }
     }
+
+    .contact-us {
+      .content-area {
+        text-align: center;
+
+        .contact-info {
+          .social-icons {
+            justify-content: center;
+          }
+        }
+
+        .contact-form {
+          text-align: left;
+
+          input,
+          textarea {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -594,6 +656,7 @@ main {
         background-position: 70% 65%;
         background-repeat: no-repeat;
         padding-bottom: 18rem;
+        width: 50%;
 
         nav {
           border-bottom-left-radius: $border-radius-default;
@@ -626,6 +689,7 @@ main {
           transition: $transition-default;
 
           &:hover {
+            background-color: $color-blue-light;
             transition: $transition-default;
             transform: translateY(-0.5rem);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
@@ -645,6 +709,7 @@ main {
           "dogs dogs cats"
           "birds fish reptiles";
         gap: 2.5rem;
+        width: 50%;
 
         .pet-type-card {
           height: 100%;
@@ -689,8 +754,8 @@ main {
 
       p {
         font-size: 2.5rem;
-        font-weight: inherit;
       }
+
       .products {
         grid-template-columns: repeat(4, 1fr);
         row-gap: initial;
@@ -750,10 +815,22 @@ main {
             line-height: 3rem;
           }
 
+          p:first-of-type {
+            font-weight: 400;
+          }
+
           p:last-of-type {
             font-weight: bold;
             font-family: $font-serif;
             text-align: left;
+          }
+
+          .next-button {
+            right: -10%;
+          }
+
+          .previous-button {
+            left: -10%;
           }
         }
       }
@@ -764,9 +841,20 @@ main {
 
       .content-area {
         flex-direction: row;
+        text-align: left;
 
-        .social-icons {
-          margin-bottom: 0;
+        .contact-info {
+          .social-icons {
+            margin-bottom: 0;
+            justify-content: flex-start;
+          }
+        }
+
+        .contact-form {
+          input,
+          textarea {
+            font-size: 2rem;
+          }
         }
       }
     }

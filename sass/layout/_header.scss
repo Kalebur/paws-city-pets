@@ -104,26 +104,18 @@ header {
           border: none;
           color: $color-gray-1;
           padding-right: 9rem;
-
-          &::placeholder {
-            text-transform: uppercase;
-            letter-spacing: 1px;
-          }
         }
       }
     }
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 600px) {
   header {
     .header-top {
       .content-area {
         flex-direction: row;
-
-        p:first-of-type {
-          display: block;
-        }
+        justify-content: center;
 
         p:nth-child(2) {
           flex-direction: row;
@@ -138,8 +130,38 @@ header {
     .header-bottom {
       .content-area {
         flex-direction: row;
+
+        img {
+          max-width: 20%;
+          margin-top: 1rem;
+        }
+
+        .input-group {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    .header-top {
+      .content-area {
+        width: 50%;
+        justify-content: space-between;
+        p:first-of-type {
+          display: block;
+        }
+      }
+    }
+
+    .header-bottom {
+      .content-area {
+        flex-direction: row;
         padding: 2.5rem;
         box-shadow: $shadow-default;
+        width: 50%;
 
         img {
           max-width: 20%;

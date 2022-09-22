@@ -1,3 +1,35 @@
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* COLORS */
 /* TRANSITIONS */
 /* BOX SHADOWS */
@@ -12,49 +44,57 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.4s;
 }
 .modal .modal-content {
-  background-color: #eff3f7;
+  background-color: #003964;
   height: 75%;
-  width: 50%;
+  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   color: #222;
-  padding: 2rem 4rem;
-}
-.modal .modal-content i {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: #39b173;
-  color: #206441;
-  font-size: 16rem;
+  padding: 1rem 2rem;
 }
 .modal .modal-content h3 {
-  font-size: 3rem;
-  color: #074980;
+  font-size: 2rem;
+  width: 90%;
+  color: #f88824;
   text-align: center;
   margin-top: 4rem;
+  position: relative;
+}
+.modal .modal-content h3::after {
+  content: "";
+  width: 110%;
+  height: 0.5rem;
+  background-color: #f88824;
+  position: absolute;
+  bottom: -1.5rem;
+  left: -5%;
+  border-radius: 5px;
 }
 .modal .modal-content p {
-  font-size: 2rem;
-  margin: 4rem 0;
+  font-size: 1.6rem;
+  margin: 6rem 0 10rem 0;
+  color: #eff3f7;
+  font-weight: 300;
 }
 .modal .modal-content button {
   width: 50%;
-  margin: 10rem auto;
+  margin: 0 auto;
+}
+.modal .modal-content img {
+  max-width: 75%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .modal .modal-content {
     width: 80%;
     height: 80%;
+    padding: 2rem 4rem;
   }
   .modal .modal-content i {
     width: 100px;
@@ -62,16 +102,25 @@
     font-size: 8rem;
   }
   .modal .modal-content h3 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .modal .modal-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0;
-    font-weight: 300;
+    font-size: 2rem;
+    margin: 6rem 0 10rem 0;
+  }
+  .modal .modal-content img {
+    max-width: 40%;
   }
   .modal .modal-content button {
     margin: 5rem 0;
     width: 75%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .modal .modal-content {
+    width: 50%;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 * {
@@ -181,6 +230,45 @@ textarea::placeholder {
   text-transform: uppercase;
 }
 
+/* UTILITY CLASSES */
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+.no-display {
+  display: none;
+}
+
+.fadeOut,
+.fadeIn {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+.cart-success,
+.cart-success:focus,
+.cart-success:focus-visible,
+.cart-success:active,
+.cart-success:hover {
+  background-color: #39b173;
+  border: none;
+}
+
 @media screen and (min-width: 800px) {
   .content-area {
     width: 80%;
@@ -218,6 +306,9 @@ footer .content-area p {
 }
 footer .content-area p:not(:last-of-type) {
   margin-bottom: 2rem;
+}
+footer .content-area a:hover {
+  color: #f7b219;
 }
 
 @media screen and (min-width: 1200px) {
@@ -405,6 +496,10 @@ main .hero nav {
   font-family: "Roboto Slab", serif;
   position: fixed;
   z-index: 1;
+  transition: all 0.4s;
+}
+main .hero nav.nav-active {
+  top: 0;
 }
 main .hero nav .menu-button {
   color: #074980;
@@ -533,6 +628,9 @@ main .pet-types .pet-type-card .card-info .button {
   border: 2px solid #eff3f7;
   border-radius: 10px;
   transition: all 0.4s;
+}
+main .pet-types .pet-type-card .card-info .button:hover {
+  background-color: rgba(63, 156, 224, 0.85);
 }
 main .pet-types .pet-dogs {
   background: url("/assets/photos/dogs.jpg");
@@ -669,7 +767,8 @@ main .testimonials .content-area h2 {
 }
 main .testimonials .content-area p {
   color: #222;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
   line-height: 3rem;
   margin: 6rem 0;
 }
@@ -866,7 +965,7 @@ main .contact-us .content-area .contact-form button {
 main .testimonials .content-area .testimonial .previous-button {
     display: block;
     top: 50%;
-    transform: translateY(50%);
+    transform: translateY(25%);
   }
   main .testimonials .content-area .testimonial .next-button {
     right: -25%;

@@ -103,6 +103,40 @@ textarea {
   }
 }
 
+/* UTILITY CLASSES */
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+.no-display {
+  display: none;
+}
+
+.fadeOut,
+.fadeIn {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.cart-success,
+.cart-success:focus,
+.cart-success:focus-visible,
+.cart-success:active,
+.cart-success:hover {
+  background-color: $color-green;
+  border: none;
+}
+
 @media screen and (min-width: 800px) {
   .content-area {
     width: 80%;

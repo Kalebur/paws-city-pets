@@ -16,6 +16,7 @@ The Paws City Pet Supply Co. needs a new website (home page) built with the newe
 
 **Photo Credits:**
 
-Photos by: Karsten Winegeart, Hannah Lim, Andrew Pons, Verdian Chua, Алексей Мойса on Unsplash.com
+Photos by: Karsten Winegeart, Hannah Lim, Andrew Pons, Verdian Chua, Алексей Мойса, Tadeusz Lakota on Unsplash.com
 
 https://unsplash.com/@karsten116?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+https://unsplash.com/photos/tk5LWGNiWVs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink

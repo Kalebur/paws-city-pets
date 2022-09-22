@@ -48,6 +48,7 @@
                 name="search"
                 id="search"
                 placeholder="search..."
+                autocomplete="off"
               />
             </label>
             <button>
@@ -65,11 +66,13 @@
               ><i class="fa-solid fa-bars"></i
             ></a>
             <ul>
-              <a href=""><li class="menu-dogs">Dogs</li></a>
-              <a href=""><li class="menu-cats">Cats</li></a>
-              <a href=""><li class="menu-birds">Birds</li></a>
-              <a href=""><li class="menu-fish">Fish</li></a>
-              <a href=""><li class="menu-reptiles">Reptiles</li></a>
+              <a href="#pet-dogs"><li class="menu-dogs">Dogs</li></a>
+              <a href="#pet-cats"><li class="menu-cats">Cats</li></a>
+              <a href="#pet-birds"><li class="menu-birds">Birds</li></a>
+              <a href="#pet-fish"><li class="menu-fish">Fish</li></a>
+              <a href="#pet-reptiles"
+                ><li class="menu-reptiles">Reptiles</li></a
+              >
             </ul>
           </nav>
           <h1>The best care for your little one</h1>
@@ -82,35 +85,35 @@
       </section>
       <section class="pet-types">
         <div class="content-area">
-          <div class="pet-type-card pet-dogs">
+          <div class="pet-type-card pet-dogs" id="pet-dogs">
             <div class="card-info">
               <h2>DOGS</h2>
               <p>Treats and toys for "man's best friend!"</p>
               <a href="" class="button">Shop Now</a>
             </div>
           </div>
-          <div class="pet-type-card pet-cats">
+          <div class="pet-type-card pet-cats" id="pet-cats">
             <div class="card-info">
               <h2>Cats</h2>
               <p>Treats and toys for your feline master!</p>
               <a href="" class="button">Shop Now</a>
             </div>
           </div>
-          <div class="pet-type-card pet-birds">
+          <div class="pet-type-card pet-birds" id="pet-birds">
             <div class="card-info">
               <h2>Birds</h2>
               <p>Fine goods for your feathered friends.</p>
               <a href="" class="button">Shop Now</a>
             </div>
           </div>
-          <div class="pet-type-card pet-fish">
+          <div class="pet-type-card pet-fish" id="pet-fish">
             <div class="card-info">
               <h2>Fish</h2>
               <p>All you need for your aquatic pals!</p>
               <a href="" class="button">Shop Now</a>
             </div>
           </div>
-          <div class="pet-type-card pet-reptiles">
+          <div class="pet-type-card pet-reptiles" id="pet-reptiles">
             <div class="card-info">
               <h2>Reptiles</h2>
               <p>Goodies for your reptilian friends!</p>
@@ -202,7 +205,6 @@
           />
         </div>
       </section>
-      <!-- TODO: Write up 2-3 more testimonials -->
       <section class="testimonials">
         <div class="content-area">
           <h2>Testimonials by Our Clients</h2>
@@ -263,6 +265,7 @@
               name="full-name"
               id="full-name"
               placeholder="Full Name"
+              autocomplete="name"
               required
             />
             <label for="email">Email:</label>
@@ -288,9 +291,12 @@
           </form>
         </div>
       </section>
-      <div class="modal">
+      <div class="modal no-display">
         <div class="modal-content">
-          <i class="fa-solid fa-check"></i>
+          <img
+            src="/assets/logos/pawscity-logo.png"
+            alt="Logo for Paws City Pet Supply Co."
+          />
           <h3 data-id="modal-thank-you">
             Thank you for contacting us,
             <span data-id="modal-customer-name">valued customer</span>!
@@ -312,5 +318,6 @@
         </p>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>

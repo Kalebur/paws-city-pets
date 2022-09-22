@@ -9,11 +9,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: $transition-default;
 
   .modal-content {
-    background-color: $color-white;
+    background-color: $color-blue-dark;
     height: 75%;
-    width: 50%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,44 +22,52 @@
     border-radius: $border-radius-default;
     color: $color-black;
 
-    padding: 2rem 4rem;
-
-    i {
-      width: 200px;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background-color: $color-green;
-      color: darken($color-green, 20%);
-      font-size: 16rem;
-    }
+    padding: 1rem 2rem;
 
     h3 {
-      font-size: 3rem;
-      color: $color-blue;
+      font-size: 2rem;
+      width: 90%;
+      color: $color-orange;
       text-align: center;
       margin-top: 4rem;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 110%;
+        height: 0.5rem;
+        background-color: $color-orange;
+        position: absolute;
+        bottom: -1.5rem;
+        left: -5%;
+        border-radius: $border-radius-tiny;
+      }
     }
 
     p {
-      font-size: 2rem;
-      margin: 4rem 0;
+      font-size: 1.6rem;
+      margin: 6rem 0 10rem 0;
+      color: $color-white;
+      font-weight: 300;
     }
 
     button {
       width: 50%;
-      margin: 10rem auto;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 75%;
     }
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .modal {
     .modal-content {
       width: 80%;
       height: 80%;
+      padding: 2rem 4rem;
 
       i {
         width: 100px;
@@ -67,19 +76,32 @@
       }
 
       h3 {
-        font-size: 2rem;
+        font-size: 3rem;
       }
 
       p {
-        font-size: 1.6rem;
-        margin: 2rem 0;
-        font-weight: 300;
+        font-size: 2rem;
+        margin: 6rem 0 10rem 0;
+      }
+
+      img {
+        max-width: 40%;
       }
 
       button {
         margin: 5rem 0;
         width: 75%;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .modal {
+    .modal-content {
+      width: 50%;
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
   }
 }

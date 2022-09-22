@@ -8,9 +8,9 @@
 body,
 html {
   background-color: $color-yellow;
-  font-size: 62.5%;
-  overflow-x: hidden;
   color: $color-white;
+  overflow-x: hidden;
+  font-size: 62.5%;
 }
 
 html,
@@ -43,8 +43,8 @@ button,
   border: none;
   background-color: $color-blue;
   color: $color-white;
-  text-transform: uppercase;
   cursor: pointer;
+  text-transform: uppercase;
 
   &:active {
     outline: none;
@@ -53,10 +53,10 @@ button,
 
 .showcase-btn {
   position: absolute;
-  font-size: 10rem;
   background-color: transparent;
   color: $color-orange;
   transition: $transition-default;
+  font-size: 10rem;
 
   &:hover {
     color: $color-yellow;
@@ -66,13 +66,14 @@ button,
 
 .btn-orange {
   width: 100%;
-  font-size: 2rem;
-  font-family: $font-serif;
-  display: block;
-  background-color: $color-orange;
   padding: 1rem 0;
+  background-color: $color-orange;
+  display: block;
   border-radius: $border-radius-tiny;
   transition: $transition-default;
+
+  font-family: $font-serif;
+  font-size: 2rem;
 
   &:hover {
     background-color: $color-yellow;

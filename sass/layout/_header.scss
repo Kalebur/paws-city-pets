@@ -12,13 +12,13 @@ header {
     background-color: $color-blue-dark;
 
     .content-area {
+      position: relative;
+      padding: $padding-default;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      padding: $padding-default;
       font-size: 1.6rem;
-      position: relative;
 
       P:first-of-type {
         display: none;
@@ -49,9 +49,9 @@ header {
           display: inline-block;
           height: 100%;
           background-color: $color-white;
-          font-weight: 300;
           margin-left: 2rem;
           margin-right: 2rem;
+          font-weight: 300;
         }
       }
     }
@@ -61,13 +61,13 @@ header {
     background-color: $color-blue;
 
     .content-area {
-      background-color: $color-blue;
+      position: relative;
+      padding: $padding-default;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      position: relative;
-      padding: $padding-default;
+      background-color: $color-blue;
 
       img {
         flex-shrink: 1;
@@ -76,20 +76,20 @@ header {
       }
 
       .input-group {
-        width: 100%;
         position: relative;
+        width: 100%;
 
         button {
+          position: absolute;
+          top: 0;
+          right: 0;
           background-color: $color-orange;
           color: $color-white;
           padding: 1rem 2rem;
-          position: absolute;
-          font-size: 3.5rem;
-          top: 0;
-          right: 0;
           border-top-right-radius: 10px;
           border-bottom-right-radius: 10px;
           transition: $transition-default;
+          font-size: 3.5rem;
 
           &:hover {
             background-color: $color-yellow;
@@ -97,13 +97,13 @@ header {
         }
 
         input {
-          font-size: 3rem;
-          padding: 1.25rem;
           width: 100%;
-          border-radius: 10px;
-          border: none;
-          color: $color-gray-1;
+          padding: 1.25rem;
           padding-right: 9rem;
+          border: none;
+          border-radius: 10px;
+          color: $color-gray-1;
+          font-size: 3rem;
         }
       }
     }
@@ -150,6 +150,7 @@ header {
       .content-area {
         width: 50%;
         justify-content: space-between;
+
         p:first-of-type {
           display: block;
         }
@@ -158,10 +159,10 @@ header {
 
     .header-bottom {
       .content-area {
+        width: 50%;
         flex-direction: row;
         padding: 2.5rem;
         box-shadow: $shadow-default;
-        width: 50%;
 
         img {
           max-width: 20%;

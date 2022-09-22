@@ -33,6 +33,9 @@
 /* COLORS */
 /* TRANSITIONS */
 /* BOX SHADOWS */
+/* BORDER PROPERTIES */
+/* TYPOGRAPHY */
+/* PADDINGS */
 .modal {
   position: absolute;
   top: 0;
@@ -47,9 +50,9 @@
   transition: all 0.4s;
 }
 .modal .modal-content {
-  background-color: #003964;
   height: 75%;
   width: 75%;
+  background-color: #003964;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,27 +62,27 @@
   padding: 1rem 2rem;
 }
 .modal .modal-content h3 {
-  font-size: 2rem;
+  position: relative;
   width: 90%;
   color: #f88824;
-  text-align: center;
   margin-top: 4rem;
-  position: relative;
+  font-size: 2rem;
+  text-align: center;
 }
 .modal .modal-content h3::after {
   content: "";
-  width: 110%;
-  height: 0.5rem;
-  background-color: #f88824;
   position: absolute;
   bottom: -1.5rem;
   left: -5%;
+  height: 0.5rem;
+  width: 110%;
+  background-color: #f88824;
   border-radius: 5px;
 }
 .modal .modal-content p {
-  font-size: 1.6rem;
-  margin: 6rem 0 10rem 0;
   color: #eff3f7;
+  margin: 6rem 0 10rem 0;
+  font-size: 1.6rem;
   font-weight: 300;
 }
 .modal .modal-content button {
@@ -92,28 +95,28 @@
 
 @media screen and (min-width: 600px) {
   .modal .modal-content {
-    width: 80%;
     height: 80%;
+    width: 80%;
     padding: 2rem 4rem;
   }
   .modal .modal-content i {
-    width: 100px;
     height: 100px;
+    width: 100px;
     font-size: 8rem;
   }
   .modal .modal-content h3 {
     font-size: 3rem;
   }
   .modal .modal-content p {
-    font-size: 2rem;
     margin: 6rem 0 10rem 0;
+    font-size: 2rem;
   }
   .modal .modal-content img {
     max-width: 40%;
   }
   .modal .modal-content button {
-    margin: 5rem 0;
     width: 75%;
+    margin: 5rem 0;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -133,9 +136,9 @@
 body,
 html {
   background-color: #f7b219;
-  font-size: 62.5%;
-  overflow-x: hidden;
   color: #eff3f7;
+  overflow-x: hidden;
+  font-size: 62.5%;
 }
 
 html,
@@ -168,8 +171,8 @@ button,
   border: none;
   background-color: #074980;
   color: #eff3f7;
-  text-transform: uppercase;
   cursor: pointer;
+  text-transform: uppercase;
 }
 button:active,
 .button:active {
@@ -178,10 +181,10 @@ button:active,
 
 .showcase-btn {
   position: absolute;
-  font-size: 10rem;
   background-color: transparent;
   color: #f88824;
   transition: all 0.4s;
+  font-size: 10rem;
 }
 .showcase-btn:hover {
   color: #f7b219;
@@ -190,13 +193,13 @@ button:active,
 
 .btn-orange {
   width: 100%;
-  font-size: 2rem;
-  font-family: "Roboto Slab", serif;
-  display: block;
-  background-color: #f88824;
   padding: 1rem 0;
+  background-color: #f88824;
+  display: block;
   border-radius: 5px;
   transition: all 0.4s;
+  font-family: "Roboto Slab", serif;
+  font-size: 2rem;
 }
 .btn-orange:hover {
   background-color: #f7b219;
@@ -295,9 +298,9 @@ textarea.invalid {
   }
 }
 footer {
+  padding: 2rem;
   background-color: #074980;
   font-size: 2rem;
-  padding: 2rem;
   text-transform: uppercase;
 }
 footer .content-area {
@@ -320,7 +323,6 @@ footer .content-area a:hover {
   footer {
     padding: 2rem 0;
     font-size: 1.6rem;
-    padding: 2rem 0;
   }
   footer .content-area {
     flex-direction: row;
@@ -346,13 +348,13 @@ header .header-top {
   background-color: #003964;
 }
 header .header-top .content-area {
+  position: relative;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;
   font-size: 1.6rem;
-  position: relative;
 }
 header .header-top .content-area P:first-of-type {
   display: none;
@@ -377,21 +379,21 @@ header .header-top .content-area p .vertical-divider {
   display: inline-block;
   height: 100%;
   background-color: #eff3f7;
-  font-weight: 300;
   margin-left: 2rem;
   margin-right: 2rem;
+  font-weight: 300;
 }
 header .header-bottom {
   background-color: #074980;
 }
 header .header-bottom .content-area {
-  background-color: #074980;
+  position: relative;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  padding: 1.5rem;
+  background-color: #074980;
 }
 header .header-bottom .content-area img {
   flex-shrink: 1;
@@ -399,32 +401,32 @@ header .header-bottom .content-area img {
   margin-bottom: 1rem;
 }
 header .header-bottom .content-area .input-group {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 header .header-bottom .content-area .input-group button {
+  position: absolute;
+  top: 0;
+  right: 0;
   background-color: #f88824;
   color: #eff3f7;
   padding: 1rem 2rem;
-  position: absolute;
-  font-size: 3.5rem;
-  top: 0;
-  right: 0;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   transition: all 0.4s;
+  font-size: 3.5rem;
 }
 header .header-bottom .content-area .input-group button:hover {
   background-color: #f7b219;
 }
 header .header-bottom .content-area .input-group input {
-  font-size: 3rem;
-  padding: 1.25rem;
   width: 100%;
-  border-radius: 10px;
-  border: none;
-  color: rgb(97, 97, 97);
+  padding: 1.25rem;
   padding-right: 9rem;
+  border: none;
+  border-radius: 10px;
+  color: rgb(97, 97, 97);
+  font-size: 3rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -458,10 +460,10 @@ header .header-bottom .content-area .input-group input {
     display: block;
   }
   header .header-bottom .content-area {
+    width: 50%;
     flex-direction: row;
     padding: 2.5rem;
     box-shadow: 0 5px 0 rgba(34, 34, 34, 0.15);
-    width: 50%;
   }
   header .header-bottom .content-area img {
     max-width: 20%;

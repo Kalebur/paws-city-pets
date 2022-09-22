@@ -15,35 +15,35 @@ main {
     }
 
     nav {
-      width: 100%;
+      position: fixed;
+      top: -110vh;
       height: 100vh;
+      width: 100%;
       color: $color-white;
       overflow: hidden;
-      top: -110vh;
-      font-family: $font-serif;
-      position: fixed;
       z-index: 1;
       transition: $transition-default;
+      font-family: $font-serif;
 
       &.nav-active {
         top: 0;
       }
 
       .menu-button {
-        color: $color-blue;
-        padding: 1rem;
-        font-size: 4rem;
-        width: 7.5rem;
-        height: 7.5rem;
-        background-color: $color-yellow;
-        border-radius: 50%;
         position: fixed;
-        right: 3%;
         top: 8%;
-        z-index: 1;
+        right: 3%;
+        color: $color-blue;
+        height: 7.5rem;
+        width: 7.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: $color-yellow;
+        border-radius: 50%;
+        padding: 1rem;
+        z-index: 1;
+        font-size: 4rem;
 
         i {
           pointer-events: none;
@@ -51,21 +51,21 @@ main {
       }
 
       ul {
-        display: grid;
         height: 100%;
+        display: grid;
 
         a {
           font-size: 2.5rem;
           font-weight: bold;
 
           li {
-            text-align: center;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 3rem 0;
-            height: 100%;
             transition: $transition-default;
+            text-align: center;
           }
         }
 
@@ -116,11 +116,12 @@ main {
     /* HERO SECTION */
 
     h1 {
+      padding: 0 1.5rem;
+      margin-top: 10rem;
+
       font-size: 3rem;
       font-weight: 600;
       text-transform: uppercase;
-      padding: 0 1.5rem;
-      margin-top: 10rem;
     }
 
     p {
@@ -131,14 +132,15 @@ main {
     }
 
     [data-id="schedule-button"] {
-      font-size: 2.5rem;
-      font-weight: bold;
       padding: 2rem 6rem;
       border-radius: $border-radius-default;
-      font-family: $font-serif;
       margin: 4rem auto;
       display: block;
       transition: $transition-default;
+
+      font-family: $font-serif;
+      font-size: 2.5rem;
+      font-weight: bold;
     }
   }
 
@@ -152,10 +154,10 @@ main {
     }
 
     .pet-type-card {
-      width: 100%;
-      height: 50rem;
-      padding: 2rem;
       position: relative;
+      height: 50rem;
+      width: 100%;
+      padding: 2rem;
 
       .card-info {
         position: absolute;
@@ -170,19 +172,20 @@ main {
         }
 
         p {
-          font-size: 1.5rem;
           margin: 2rem 0;
+          font-size: 1.5rem;
           text-shadow: 1px 1px 2px $color-black;
         }
 
         .button {
           background-color: rgba(0, 0, 0, 0.7);
           padding: 1rem 3rem;
-          font-size: 2rem;
-          font-family: $font-serif;
           border: 2px solid $color-white;
           border-radius: $border-radius-small;
           transition: $transition-default;
+
+          font-size: 2rem;
+          font-family: $font-serif;
 
           &:hover {
             background-color: rgba($color-blue-light, 0.85);
@@ -243,8 +246,8 @@ main {
     }
 
     img {
-      display: block;
       width: 100%;
+      display: block;
       order: 1;
       align-self: end;
     }
@@ -267,8 +270,8 @@ main {
   /* TOP RECOMMENDATIONS */
   .featured-products {
     background-color: $color-white;
-    text-align: center;
     padding: 15rem 1rem;
+    text-align: center;
 
     h2 {
       color: $color-blue;
@@ -277,15 +280,15 @@ main {
 
     p {
       color: $color-black;
+      margin: 5rem 0;
       font-size: 2rem;
       font-weight: 300;
-      margin: 5rem 0;
     }
 
     h3 {
       color: $color-black;
-      font-size: 2rem;
       margin: 2rem 0;
+      font-size: 2rem;
     }
 
     .products {
@@ -319,16 +322,18 @@ main {
     }
 
     h2 {
-      font-size: 3rem;
       margin: 6rem 0;
-      text-align: center;
       padding: 0 2.5rem;
+
+      font-size: 3rem;
+      text-align: center;
     }
 
     p {
-      font-size: 1.8rem;
       line-height: 4rem;
       padding: 0 1.5rem;
+
+      font-size: 1.8rem;
       font-weight: 300;
     }
 
@@ -344,10 +349,10 @@ main {
     background-color: $color-white;
 
     .content-area {
-      padding: 10rem 0;
-      text-align: center;
-      position: relative;
       width: 80%;
+      padding: 10rem 0;
+      position: relative;
+      text-align: center;
 
       h2 {
         color: $color-blue;
@@ -356,10 +361,11 @@ main {
 
       p {
         color: $color-black;
+        margin: 6rem 0;
+
         font-size: 2rem;
         font-weight: 300;
         line-height: 3rem;
-        margin: 6rem 0;
       }
 
       .testimonial {
@@ -374,8 +380,8 @@ main {
         box-shadow: $shadow-default;
 
         &-text {
-          text-align: left;
           flex-basis: 60%;
+          text-align: left;
         }
 
         p {
@@ -390,9 +396,9 @@ main {
         }
 
         &-photo {
-          border-radius: 50%;
-          width: 250px;
           height: 250px;
+          width: 250px;
+          border-radius: 50%;
           background: url("/assets/photos/testimonial-elaineb.jpg");
           background-size: cover;
           background-position: center;
@@ -409,8 +415,8 @@ main {
   /* CONTACT SECTION */
   .contact-us {
     background-color: $color-purple;
-    font-size: 2rem;
     padding: 0 4rem;
+    font-size: 2rem;
 
     .content-area {
       padding: 10rem 0;
@@ -432,8 +438,8 @@ main {
         address {
           text-transform: uppercase;
           line-height: 3rem;
-          font-style: normal;
           margin-bottom: 3rem;
+          font-style: normal;
         }
 
         p {
@@ -446,17 +452,17 @@ main {
           justify-content: space-between;
 
           a {
-            display: inline-block;
-            width: 60px;
             height: 60px;
+            width: 60px;
+            display: inline-block;
             color: $color-purple;
             background-color: $color-purple-light;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 3rem;
             transition: $transition-default;
+            font-size: 3rem;
 
             &:not(:last-of-type) {
               margin-right: 1.5rem;
@@ -479,29 +485,30 @@ main {
 
           .invalid-alert {
             position: absolute;
-            font-size: 1.5rem;
-            font-weight: 400;
             bottom: 0;
             right: 0;
+            font-size: 1.5rem;
+            font-weight: 400;
           }
         }
 
         label {
-          text-transform: uppercase;
-          font-size: 1.6rem;
           margin-bottom: 1rem;
+          font-size: 1.6rem;
+          text-transform: uppercase;
         }
 
         input,
         textarea {
           width: 100%;
-          font-size: 1.5rem;
           color: $color-black;
           padding: 1rem 2rem;
           margin-bottom: 3rem;
-          font-family: $font-sans;
-          border-radius: $border-radius-tiny;
           border: 2px solid transparent;
+          border-radius: $border-radius-tiny;
+
+          font-family: $font-sans;
+          font-size: 1.5rem;
         }
 
         textarea {
@@ -509,8 +516,8 @@ main {
         }
 
         button {
-          font-weight: 600;
           margin-top: 2rem;
+          font-weight: 600;
         }
       }
     }
@@ -543,30 +550,30 @@ main {
         background-position: 70% 40%;
 
         h1 {
-          margin-left: 2rem;
           width: 60%;
+          margin-left: 2rem;
           font-size: 4rem;
         }
 
         p {
-          margin: 6rem 0 6rem 2rem;
           width: 60%;
+          margin: 6rem 0 6rem 2rem;
           font-size: 2rem;
         }
 
         nav {
           // display: flex;
           position: initial;
-          height: initial;
           width: 100%;
+          height: initial;
 
           .menu-button {
             display: none;
           }
 
           ul {
-            display: flex;
             height: initial;
+            display: flex;
 
             a {
               flex-grow: 1;
@@ -584,6 +591,7 @@ main {
 
     .pet-types {
       padding: 10rem 0;
+
       .content-area {
         width: 90%;
 
@@ -676,11 +684,11 @@ main {
   main {
     .hero {
       .content-area {
+        width: 50%;
         background-size: 160%;
         background-position: 70% 65%;
         background-repeat: no-repeat;
         padding-bottom: 18rem;
-        width: 50%;
 
         nav {
           border-bottom-left-radius: $border-radius-default;
@@ -705,12 +713,13 @@ main {
         }
 
         [data-id="schedule-button"] {
-          font-size: 2.5rem;
-          font-weight: bold;
           padding: 2rem 6rem;
           margin: initial;
           border-radius: $border-radius-default;
           transition: $transition-default;
+
+          font-size: 2.5rem;
+          font-weight: bold;
 
           &:hover {
             background-color: $color-blue-light;
@@ -726,6 +735,7 @@ main {
       padding: 10rem 0;
 
       .content-area {
+        width: 50%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 400px);
@@ -733,7 +743,6 @@ main {
           "dogs dogs cats"
           "birds fish reptiles";
         gap: 2.5rem;
-        width: 50%;
 
         .pet-type-card {
           height: 100%;
@@ -748,10 +757,10 @@ main {
 
     .about-doggo {
       .content-area {
+        width: 50%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
-        width: 50%;
 
         img {
           order: 0;
@@ -793,24 +802,24 @@ main {
 
     .about-us {
       .content-area {
+        width: 50%;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 10rem;
         padding: 10rem 0;
-        width: 50%;
       }
 
       h2 {
-        font-size: 4rem;
-        text-align: left;
         padding: 0;
         margin: 0;
         margin-bottom: 6rem;
+        font-size: 4rem;
+        text-align: left;
       }
 
       p {
+        padding: 0;
         font-size: 2.5rem;
         font-weight: inherit;
-        padding: 0;
       }
 
       img {

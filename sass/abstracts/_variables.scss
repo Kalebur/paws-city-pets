@@ -20,11 +20,14 @@ $transition-default: all 0.4s;
 /* BOX SHADOWS */
 $shadow-default: 0 5px 0 rgba($color-black, 0.15);
 
+/* BORDER PROPERTIES */
 $border-radius-tiny: 5px;
 $border-radius-small: 10px;
 $border-radius-default: 20px;
 
+/* TYPOGRAPHY */
 $font-sans: "Roboto", "Franklin Gothic Medium", Tahoma, sans-serif;
 $font-serif: "Roboto Slab", serif;
 
+/* PADDINGS */
 $padding-default: 1.5rem;

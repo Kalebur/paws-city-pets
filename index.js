@@ -101,6 +101,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const navMenu = document.querySelector("nav");
   const nextTestimonialBtn = document.querySelector(".next-button");
   const previousTestimonialBtn = document.querySelector(".previous-button");
+  const formFullName = document.querySelector("#full-name");
+  const formEmail = document.querySelector("#email");
+  const formMessage = document.querySelector("#message");
+  const shopButtons = document.querySelectorAll(".card-info .button");
+  const petButtons = document.querySelectorAll("nav ul a");
 
   // Handle displaying/hiding mobile nav menu
   menuBtn.addEventListener("click", (e) => {
@@ -115,13 +120,11 @@ window.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.toggle("nav-active");
       siteBody.classList.toggle("no-scroll");
       window.scrollTo(0, parseInt(currentScroll || 0) * -1);
-
       menuBtn.innerHTML = hamburgerHTML;
     } else {
       navMenu.classList.toggle("nav-active");
       siteBody.classList.toggle("no-scroll");
       siteBody.style.top = `-${appVars.scrollY}px`;
-
       menuBtn.innerHTML = closeIconHTML;
     }
   });
@@ -137,6 +140,22 @@ window.addEventListener("DOMContentLoaded", () => {
     window.open(
       "https://www.google.com/search?q=" + adjustedQuery + "&tbm=shop"
     );
+  });
+
+  // Hide mobile window when clicking links on mobile
+  petButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      appVars.siteBody.classList.remove("no-scroll");
+      navMenu.classList.remove("nav-active");
+      menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+
+  // Disable default effect on pet "Shop Now" links
+  shopButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
   });
 
   // Handle effects on the "Add to Cart" buttons
@@ -186,14 +205,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!validName) {
       name.focus();
+      name.classList.add("invalid");
+      document
+        .querySelector("#name-group .invalid-alert")
+        .classList.remove("no-display");
       return;
     }
     if (!validEmail) {
       email.focus();
+      email.classList.add("invalid");
+      document
+        .querySelector("#email-group .invalid-alert")
+        .classList.remove("no-display");
       return;
     }
     if (!validMessage) {
       message.focus();
+      message.classList.add("invalid");
+      document
+        .querySelector("#message-group .invalid-alert")
+        .classList.remove("no-display");
       return;
     }
 
@@ -218,5 +249,27 @@ window.addEventListener("DOMContentLoaded", () => {
     appVars.siteBody.style.top = "";
     window.scrollTo(0, parseInt(currentScroll || 0) * -1);
     document.querySelector(".modal").classList.add("no-display");
+  });
+
+  // Handle clearing styles from invalid inputs
+  formFullName.addEventListener("focusout", function () {
+    this.classList.remove("invalid");
+    document
+      .querySelector("#name-group .invalid-alert")
+      .classList.add("no-display");
+  });
+
+  formEmail.addEventListener("focusout", function () {
+    this.classList.remove("invalid");
+    document
+      .querySelector("#email-group .invalid-alert")
+      .classList.add("no-display");
+  });
+
+  formMessage.addEventListener("focusout", function () {
+    this.classList.remove("invalid");
+    document
+      .querySelector("#message-group .invalid-alert")
+      .classList.add("no-display");
   });
 });

@@ -221,11 +221,11 @@
               <p>Elaine Bennett</p>
             </div>
             <div class="testimonial-photo"></div>
-            <button class="showcase-btn next-button">
-              <i class="fa-sharp fa-solid fa-chevron-right"></i>
-            </button>
             <button class="showcase-btn previous-button">
               <i class="fa-sharp fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="showcase-btn next-button">
+              <i class="fa-sharp fa-solid fa-chevron-right"></i>
             </button>
           </div>
         </div>
@@ -259,32 +259,47 @@
           </div>
           <form action="" class="contact-form" method="post">
             <h3>Contact</h3>
-            <label for="full-name">Name:</label>
-            <input
-              type="text"
-              name="full-name"
-              id="full-name"
-              placeholder="Full Name"
-              autocomplete="name"
-              required
-            />
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              required
-            />
-            <label for="message">Message:</label>
-            <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="5"
-              placeholder="Send us a message..."
-              required
-            ></textarea>
+            <div class="input-group" id="name-group">
+              <label for="full-name">Name:</label>
+              <input
+                type="text"
+                name="full-name"
+                id="full-name"
+                placeholder="Full Name"
+                autocomplete="name"
+                required
+              />
+              <p class="invalid-alert no-display">
+                Name must be at least 2 letters long.
+              </p>
+            </div>
+            <div class="input-group" id="email-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+              <p class="invalid-alert no-display">
+                Please enter a valid email address.
+              </p>
+            </div>
+            <div class="input-group" id="message-group">
+              <label for="message">Message:</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="5"
+                placeholder="Send us a message..."
+                required
+              ></textarea>
+              <p class="invalid-alert no-display">
+                Message must be at least 2 letters long.
+              </p>
+            </div>
             <button class="btn-orange" data-id="contact-btn">
               Send Message
             </button>

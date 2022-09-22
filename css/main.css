@@ -229,6 +229,11 @@ input::placeholder,
 textarea::placeholder {
   text-transform: uppercase;
 }
+input.invalid,
+textarea.invalid {
+  border-color: #f85c62;
+  box-shadow: 0 0 20px red;
+}
 
 /* UTILITY CLASSES */
 .no-scroll {
@@ -866,6 +871,16 @@ main .contact-us .content-area .contact-form {
   flex-direction: column;
   flex-basis: 50%;
 }
+main .contact-us .content-area .contact-form .input-group {
+  position: relative;
+}
+main .contact-us .content-area .contact-form .input-group .invalid-alert {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 400;
+  bottom: 0;
+  right: 0;
+}
 main .contact-us .content-area .contact-form label {
   text-transform: uppercase;
   font-size: 1.6rem;
@@ -887,6 +902,7 @@ main .contact-us .content-area .contact-form textarea {
 }
 main .contact-us .content-area .contact-form button {
   font-weight: 600;
+  margin-top: 2rem;
 }
 
 /* MISC MOBILE PHONE STYLES */

@@ -101,6 +101,11 @@ textarea {
   &::placeholder {
     text-transform: uppercase;
   }
+
+  &.invalid {
+    border-color: $color-red;
+    box-shadow: 0 0 20px red;
+  }
 }
 
 /* UTILITY CLASSES */

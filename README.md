@@ -1,5 +1,7 @@
 # Paws City Pet Supply Co.
 
+![A screenshot of Paws City Pets Website](https://kalebur.github.io/portfolio/assets/images/paws-city-photo-md.png)
+
 ### Project Scope
 
 The Paws City Pet Supply Co. needs a new website (home page) built with the newest mobile, tablet and laptop/desktop browsers in mind. There are several sections on the hompage. Including:
